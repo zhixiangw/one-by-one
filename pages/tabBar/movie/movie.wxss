@@ -1,0 +1,141 @@
+@import '/templates/movieSection/movieSection.wxss';
+
+.container{
+  display: -webkit-box;
+  -webkit-box-orient: vertical; 
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.banner{
+  position: relative;
+}
+
+.city-entry {
+  z-index: 9;
+  left: 15px;
+  height: 32px;
+  font-size: 26rpx;
+  color: #333;
+  position: absolute;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  padding: 0 15px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, .7);
+}
+.city-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 19.2vw;
+}
+.city-entry-arrow {
+  width: 0;
+  height: 0;
+  border: 8rpx solid #333;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  display: block;
+  margin-left: 8rpx;
+  margin-top: 8rpx;
+}
+swiper{
+  height: 330rpx;
+}
+.slide-image{
+  width: 100%;
+}
+.switch-hot {
+  display: flex;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.hot-item {
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+  margin: 0 24rpx;
+  font-weight: 700;
+  flex: 1;
+}
+
+.hot-item.active .text {
+  display: block;
+  height: calc(100% - 2px);
+  color: #ef4238;
+  width: 120rpx;
+  margin: 0 auto;
+  border-bottom: 2px solid #ef4238;
+}
+
+
+.search-entry {
+  color: #ef4238;
+  font-weight: 700;
+  height: 100%;
+  line-height: 90rpx;
+  padding: 0 30rpx;
+}
+
+.search-entry .iconfont {
+  font-size: 36rpx;
+}
+
+
+.switch-content {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+}
+
+.title {
+  padding: 0 30rpx;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.most-expected {
+  position: relative;
+  padding: 0 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 20rpx solid #f5f5f5;
+}
+
+.most-expected .title {
+  padding-left: 0;
+  margin-bottom: 20rpx;
+}
+
+.expected-item { 
+  display: inline-block;
+  width: 170rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.poster {
+  position: relative;
+  width: 170rpx;
+  height: 230rpx;
+  margin-bottom: 12rpx;
+}
+
+.name {
+  margin-bottom: 3px;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.data {
+  font-size: 24rpx;
+  color: #999;
+}

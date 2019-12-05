@@ -1,0 +1,46 @@
+<view class='container'>
+  <view class='titleContainer'>
+    <view class="cinemaName">{{cinemaName}}</view>
+    <view class='titleText'>{{title}}</view>
+    <view class='iconArrange'>
+      <view class='seatIcon'>
+        <image src='/assets/icon/seatPre.png'></image>
+        <text>可选</text>
+      </view>
+      <view class='seatIcon'>
+        <image src='/assets/icon/seatDone.png'></image>
+        <text>已售</text>
+      </view>
+    </view>
+  </view>
+  <movable-area class="movable-area" scale-area="true">
+    <view class='hallTitle'>
+      <text>{{hallName}}</text>
+    </view>
+    <movable-view id='movable-view' class="movable-view" direction="all" bindchange="onChange" bindscale="onScale" scale="true" scale-min="0.5" scale-max="2" scale-value="1" inertia="true">
+      <view class='downContainer' id='seatView'>
+        <view class='seatView'>
+          <view class='x' wx:for="{{seat}}" wx:for-index="idx" wx:for-item="xSeat" wx:key="index">
+            <view class='y' wx:for="{{xSeat}}" wx:for-item="ySeat" wx:for-index="idy" wx:key="index">
+              <image class="img" bind:tap='selectSeat' src='{{ySeat.iconSrc}}' data-index='{{ySeat.yCoord}}' data-ix='{{ySeat.xCoord}}'>
+              </image>
+              <text wx:if="{{xSeat.length - idy - 1 == (xSeat.length >> 1) }}">|</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </movable-view>
+    <view class='line' style='top: {{lineTop}}px'>
+      <text class='text' style="height:{{lineHeight}}px;line-height:{{lineHeight}}px;" wx:for="{{lineArray}}" wx:key="index">{{item}}</text>
+    </view>
+  </movable-area>
+  <view class='ticketCount'>
+    <button wx:for="{{selectSeatList}}" wx:key="index" data-index='{{item.index}}' data-x='{{item.x}}' bind:tap='cancelSeat' data-y='{{item.y}}'>
+      <view>{{item.seatInfo}}</view>
+      <image class='btnImg' src='/assets/icon/close.png'></image>
+    </button>
+  </view>
+  <view class='submit {{ !totalMoney && "disabled" || "" }}' bind:tap="submit">
+    <text>{{totalMoney && '￥'}}{{totalMoney}} 确认选座</text>
+  </view>
+</view>

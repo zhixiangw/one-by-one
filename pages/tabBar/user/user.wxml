@@ -1,0 +1,57 @@
+<view class='container'>
+  <view class='header'>
+    <open-data type="userAvatarUrl" class='avatar'></open-data>
+    <open-data type="userNickName" class='name'></open-data>
+  </view>
+  <view>
+    <view class='order'>
+      <view class='order-title other-item'>
+        <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
+          我的订单
+        </navigator>
+      </view>
+      <view class="order-type">
+        <view class="pending-item">
+          <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
+            <view class='iconfont icon-lianxikefu'></view>
+            <view>待付款</view> 
+          </navigator>
+        </view>
+        <view class="pending-item">
+          <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
+            <view class='iconfont icon-lianxikefu'></view>
+            <view>待出票</view> 
+          </navigator>
+        </view>
+        <view class="pending-item">
+          <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
+            <view class='iconfont icon-lianxikefu'></view>
+            <view>待收货</view> 
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class='other'>
+      <view class='customer other-item'>
+        <button open-type='getPhoneNumber' bindgetphonenumber='bindgetphonenumber' class='btn' hover-class='none'>
+          <text class='iconfont icon-lianxikefu'></text> 绑定手机
+        </button>
+      </view>
+      <view class='share other-item'>
+        <button open-type='share' class='btn' hover-class='none'>
+          <text class='iconfont icon-fenxiang1'></text> 分享给朋友
+        </button>
+      </view>
+      <view class='customer other-item'>
+        <button open-type='contact' class='btn' hover-class='none'>
+          <text class='iconfont icon-lianxikefu'></text> 专属客服
+        </button>
+      </view>
+      <view class='about other-item'>
+        <navigator url='../../subPages/about-page/about-page' hover-class='none'>
+          <text class='iconfont icon-guanyuwomen'></text> 关于
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

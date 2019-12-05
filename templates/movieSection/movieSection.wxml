@@ -1,0 +1,16 @@
+<template name="movieSection">
+  <navigator class='movie-section' url='/pages/subPages/movie-detail/movie-detail?movieId={{movie.id}}'>
+    <image class='movie-img' src='{{movie.img}}'></image>
+    <view class='movie-info'>
+      <view class='movie-name line-ellipsis'>{{movie.nm}}</view>
+      <view class='version {{movie.version}}'></view>
+      <view class='grade line-ellipsis'>{{movie.sc || ''}}</view>
+      <view class='movie-star line-ellipsis'>主演：{{movie.star}}</view>
+    </view>
+    <view class='buy-tickets'>
+      <view wx:if='{{movie.showst===3}}' class='btn'>购票</view>
+      <view wx:elif='{{movie.showst===1}}' class='btn want-see'>想看</view>
+      <view wx:elif='{{movie.showst===4}}' class='btn pre-sale'>预售</view>
+    </view>
+  </navigator>
+</template>

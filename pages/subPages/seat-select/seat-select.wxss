@@ -1,0 +1,196 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleContainer {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.cinemaName{
+  margin: 5rpx 50rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.titleText {
+  margin: 5rpx 50rpx;
+  padding-bottom: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.iconArrange {
+  margin: 20rpx 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.seatIcon {
+  display: flex;
+  align-items: center;
+}
+
+.seatIcon image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.seatIcon text {
+  font-size: 20rpx;
+}
+
+.line {
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  left: 5rpx;
+  background: #ebebeb;
+}
+
+.image-group {
+  display: flex;
+  white-space: nowrap;
+  margin-top: 10rpx;
+}
+
+.text {
+  opacity: 0.5;
+  text-align: center;
+  width: 60rpx;
+  font-size: auto;
+}
+
+.movable-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: #f7f7f7;
+}
+
+.movable-view {
+  height: 20%;
+  width: 20%;
+  top: 300rpx;
+  left: 350rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  margin: 5rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.imgSelect {
+  margin: 5rpx;
+  height: 60rpx;
+  width: 60rpx;
+  background: #fd4f68;
+}
+
+.downContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.x {
+  display: flex;
+  flex-direction: row;
+}
+
+.y {
+  display: flex;
+  color: #bdbdbd;
+}
+
+.hallTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 460rpx;
+  background: #e2e2e2;
+  border-bottom-left-radius: 90rpx;
+  border-bottom-right-radius: 90rpx;
+}
+
+.hallTitle text {
+  padding: 5rpx;
+  font-size: 20rpx;
+  color: #666;
+  text-align: center;
+}
+
+.submit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: linear-gradient(to right, #fc7e9f, #fd4f68);
+}
+.submit.disabled{
+  background: #e2e2e2;
+}
+.submit text {
+  color: #fff;
+  font-size: 35rpx;
+}
+
+.ticketCount {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  bottom: 100rpx;
+}
+
+.ticketCount button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  margin: 10rpx 0 10rpx 15rpx;
+  color: #666;
+  background-color: #fff;
+  border-radius: 0;
+  padding: 8rpx 15rpx;
+  line-height: 30rpx;
+}
+
+.ticketCount image {
+  margin-left: 5rpx;
+  height: 18rpx;
+  width: 18rpx;
+}

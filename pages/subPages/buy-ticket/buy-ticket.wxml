@@ -1,0 +1,38 @@
+<view class='container' wx:if='{{order}}'>
+  <view class='section'>
+    <view class='movie-box'>
+      <view class='movie-poster' style='background-image: url({{order.movieImg}})'></view>
+      <view class="movie-info">
+        <view class="info-box">
+          <view class='movie-name'>{{order.movieName}}</view>
+          <view class='watch-time'>{{order.time}} {{order.lang}}</view>
+          <view>{{order.cinemaName}}</view>
+          <view>{{order.hall}}</view>
+        </view>
+        <view class="price-box">
+          <view>市场价：<text class="price-num">{{order.price}}元</text></view>
+          <view>优惠价：<text class="price-num">{{order.price}}元</text></view>
+        </view>
+      </view>
+    </view>
+    <view class='seat-box'>
+      <view>座位</view>
+      <view class='server'>{{order.seat}}</view>
+    </view>
+  </view>
+  <view class='section section-bottom'>
+    <view class='section-title'>购票须知</view>
+    <view class='section-content'>
+      <view>1、经出票的订单<text class="stress">不可改签、退款。</text></view>
+      <view>2、由平台入驻商家提供代购服务，出票时间为09:00~22:00，<text class="stress">下单后大概10~60分钟左右完成出票</text>
+      ，若订票失败，将会2小时内自动退款。<text class="stress">建议使用连锁影院。</text></view>
+      <view>3、购票成功，将以小程序推送的方式提醒您出票成功，请到订单详情查看取票码，凭取票码可到影院自助取票。</view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='payment'>还需支付：
+      <text class='price-num'>{{order.totalMoney}}<text class='yuan'>元</text></text>
+    </view>
+    <view class='payment-btn' bindtap='payment'>确认支付</view>
+  </view>
+</view>

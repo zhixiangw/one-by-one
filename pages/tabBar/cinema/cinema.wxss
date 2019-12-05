@@ -1,0 +1,69 @@
+@import '/templates/cinemaSection/cinemaSection.wxss';
+.topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  border: none;
+  background-color: #e54847;
+  display: flex;
+  align-items: center;
+}
+
+.city-entry {
+  left: 15px;
+  height: 32px;
+  font-size: 26rpx;
+  color: #999;
+  position: absolute;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  padding: 0 15px;
+  border-radius: 32px;
+  background: #fff;
+}
+.city-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 19.2vw;
+}
+.city-entry-arrow {
+  width: 0;
+  height: 0;
+  border: 8rpx solid #999;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  display: block;
+  margin-left: 8rpx;
+  margin-top: 8rpx;
+}
+.search-input {
+  width: 300rpx;
+  height: 32px;
+  margin: 0 auto;
+  font-size: 26rpx;
+  color: #999;
+  border-radius: 32px;
+  background: #fff;
+  line-height: 32px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.icon-sousuo {
+  display: inline-block;
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

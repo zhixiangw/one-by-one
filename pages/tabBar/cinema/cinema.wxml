@@ -1,0 +1,23 @@
+<import src='../../../templates/nothing/nothing.wxml' />
+<import src='../../../templates/loadingMore/loadingMore.wxml' />
+<import src='../../../templates/cinemaSection/cinemaSection.wxml' />
+
+<view class='container'>
+  <view class='topbar' style="height: {{cityTop + 40}}px">
+    <navigator style="top: {{cityTop}}px" class='city-entry' url='../../subPages/city-select/city-select'>
+      <text class='city-name'>{{city}}</text>
+      <text class='city-entry-arrow'></text>
+    </navigator>
+    <navigator style="top: {{cityTop}}px" url='../../subPages/search-page/search-page?stype=2' class='search-input'>
+      <text class='iconfont icon-sousuo'></text>影院名称</navigator>
+  </view>
+  <view class='cinema-list' style="margin-top: {{cityTop + 40}}px">
+   <template is="cinemaSection" wx:for='{{cinemas}}' wx:for-item='cinema' wx:key='index' data='{{cinema}}'/>
+  </view>
+  <view wx:if='{{!loadComplete && cinemas.length}}'>
+    <template is="loadingMore" />
+  </view>
+  <view hidden='{{!nothing}}'>
+    <template is='nothing' data='{{message:"暂无符合条件的影院"}}' />
+  </view>
+</view>

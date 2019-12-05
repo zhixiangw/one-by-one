@@ -1,0 +1,27 @@
+<import src='../../../templates/cinemaMap/cinemaMap.wxml' />
+<view class='container' wx:if='{{order}}'>
+  <view class='ticket-content'>
+    <navigator class='cinema' url='../cinema-detail/cinema-detail?cinemaId={{order.cinemaId}}' hover-class='none'>
+      <view>{{order.cinemaName}}</view>
+      <view class='triangle'></view>
+    </navigator>
+    <view class='movie-info'>
+      <view class='movie-name line-ellipsis'>{{order.movieName}}</view>
+      <view class='showTime line-ellipsis'>{{order.time}} {{order.lang}}</view>
+      <view class='position line-ellipsis'>{{order.hall}} {{order.seat}}</view>
+    </view>
+    <view class='divider-box'>
+      <view class='divider'></view>
+    </view>
+    <view class='code-container'>
+      <view class='code-box'>
+        <view>手机号：187××××2533</view>
+        <view>流水号：{{order.flowNumber}}</view>
+        <view>验证码：{{order.Vcode}}</view>
+      </view>
+      <view class='rq'>
+        <image src='/assets/images/qr.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

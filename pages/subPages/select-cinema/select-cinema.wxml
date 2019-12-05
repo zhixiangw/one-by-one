@@ -1,0 +1,22 @@
+<import src='../../../templates/cinemaSection/cinemaSection.wxml' />
+<import src='../../../templates/loadingMore/loadingMore.wxml' />
+<import src='../../../templates/nothing/nothing.wxml' />
+
+<view class='container'>
+  <view class='top'>
+    <view>
+      <select-time start-time='{{showTime}}' bindselectDayEvent='changeTime'></select-time>
+    </view>
+  </view>
+  <view class='main-content'>
+    <view class='cinema-list'>
+      <template is="cinemaSection" wx:for='{{cinemas}}' wx:for-item='cinema' wx:key='index' data='{{cinema,movieId:params.movieId,day:params.day}}' />
+    </view>
+    <view wx:if='{{!loadComplete && cinemas.length}}'>
+      <template is="loadingMore" />
+    </view>
+    <view hidden='{{!noSchedule}}'>
+      <template is='nothing' data='{{message:"当天暂无场次"}}' />
+    </view>
+  </view>
+</view>

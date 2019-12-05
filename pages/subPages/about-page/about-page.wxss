@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #f7f7f7;
+  overflow: auto;
+}
+
+.banner {
+  height: 375rpx;
+  margin: 20rpx;
+  box-sizing: border-box;
+  background-color: #eee;
+  line-height: 0;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px 1px #ddd;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}

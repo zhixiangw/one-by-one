@@ -1,0 +1,20 @@
+.cinema-info {
+  display: flex;
+  align-items: center;
+  padding: 15rpx;
+  padding-right: 0;
+  background: #fff;
+}
+
+.cinema-info .location {
+  margin-top: 2px;
+  font-size: 24rpx;
+  line-height: 37rpx;
+  color: #999;
+  margin-left: 10rpx;
+}
+
+.cinema-info image {
+  width: 36rpx;
+  height: 39rpx;
+}

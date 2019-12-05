@@ -1,0 +1,134 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.2",
+	"appid": "wx2aee737c548bfbc9",
+	"projectname": "weapp-movie-master",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/subPages/cinema-detail/cinema-detail",
+					"pathName": "pages/subPages/cinema-detail/cinema-detail",
+					"query": "cinemaId=17004&movieId=360504&day=2019-09-13",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/subPages/buy-ticket/buy-ticket",
+					"pathName": "pages/subPages/buy-ticket/buy-ticket",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/subPages/movie-detail/movie-detail",
+					"pathName": "pages/subPages/movie-detail/movie-detail",
+					"query": "movieId=360504",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/subPages/cinema-detail/cinema-detail",
+					"pathName": "pages/subPages/cinema-detail/cinema-detail",
+					"query": "cinemaId=17004&movieId=1258394&day=2019-09-16",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/subPages/seat-select/seat-select",
+					"pathName": "pages/subPages/seat-select/seat-select",
+					"query": "seqNo=201912050121842",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/subPages/search-page/search-page",
+					"pathName": "pages/subPages/search-page/search-page",
+					"query": "stype=2",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "授权中间页",
+					"pathName": "pages/subPages/authorize/authorize",
+					"query": "type=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "选择电影列表页面",
+					"pathName": "pages/subPages/select-cinema/select-cinema",
+					"query": "movieId=134&movieName=%E5%86%B3%E6%88%98%E4%B8%AD%E9%80%94%E5%B2%9B&showTime=2019-11-08",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/subPages/seat-select/seat-select",
+					"pathName": "pages/subPages/seat-select/seat-select",
+					"query": "seqNo=201911140036523&movieImg=http%3A%2F%2Fp0.meituan.net%2F148.208%2Fmoviemachine%2Fc6b78c6badb0280eda5989032475ca341406684.jpg",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "pages/subPages/select-cinema/select-cinema",
+					"pathName": "pages/subPages/select-cinema/select-cinema",
+					"query": "movieId=1163219&movieName=%E5%86%B3%E6%88%98%E4%B8%AD%E9%80%94%E5%B2%9B&showTime=2019-11-08",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/subPages/buy-ticket/buy-ticket",
+					"pathName": "pages/subPages/buy-ticket/buy-ticket",
+					"query": "movieId=1163219&movieName=%E5%86%B3%E6%88%98%E4%B8%AD%E9%80%94%E5%B2%9B&showTime=2019-11-08",
+					"scene": null
+				}
+			]
+		}
+	}
+}

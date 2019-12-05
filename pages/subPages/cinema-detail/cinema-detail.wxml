@@ -1,0 +1,50 @@
+<import src='../../../templates/cinemaMap/cinemaMap.wxml' />
+<view wx:if='{{cinemaDetail}}'>
+  <view>
+   <template is="cinemaMap" data='{{cinemaData:cinemaDetail.cinemaData}}'/>
+  </view>
+  <view>
+    <view>
+      <select-movie movies='{{movies}}' bindselectMovie='selectMovie' defaultSelectID='{{movieId}}'/>
+    </view>
+    <view class='movie-info' wx:if='{{movie}}'>
+      <view class='movie-title line-ellipsis'>
+        <text class='title'>{{movie.nm}}</text>
+      </view>
+      <view class='movie-desc line-ellipsis'>{{movie.desc}}</view>
+    </view>
+  </view>
+  <view>
+    <select-time days='{{days}}' bindselectDayEvent='selectDay' defaultSelect='{{day}}'></select-time>
+  </view>
+  <view>
+    <view wx:if='{{timeList.length}}'>
+      <view class='time' wx:for='{{timeList}}' wx:key='index' class='item' bindtap='buyTicket' data-info='{{item}}'>
+        <view class='time-block box'>
+          <view class='begin'>{{item.tm}}</view>
+          <view class='end'>{{item.endTime}} 散场</view>
+        </view>
+        <view class='info-block box'>
+          <view class="lan line-ellipsis">{{item.lang}} {{item.tp}}</view>
+          <view class="hall line-ellipsis">{{item.th}}</view>
+        </view>
+        <view class='price box'>
+          <view class='price-box line-ellipsis'>
+            <view class="sellPr">
+              <text class="stonefont">{{item.sellPrice}}</text>
+              <text class="d">元</text>
+            </view>
+          </view>
+          <view class='discount line-ellipsis' wx:if='{{item.extraDesc}}'>{{item.extraDesc}}</view>
+        </view>
+        <view class='button-block'>
+          <view class='button'>选座</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class='no-seat'>
+      <image src='/assets/images/cinema2.png'></image>
+      <text>{{movie.globalReleased ?'今日场次已映完':'影片未上映'}}</text>
+    </view>
+  </view>
+</view>

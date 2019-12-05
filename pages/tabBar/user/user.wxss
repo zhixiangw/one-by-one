@@ -1,0 +1,118 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #f3f3f3;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #e54847;
+  padding: 0 30rpx 30rpx;
+}
+
+.header .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+
+.header .name {
+  height: 45rpx;
+  font-size: 32rpx;
+  line-height: 45rpx;
+  color: #fff;
+}
+
+.order {
+  margin: 20rpx 30rpx;
+  background: #fff;
+  padding: 13rpx 30rpx 26rpx;
+  border-radius: 6rpx;
+}
+
+.order .order-title {
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 0;
+}
+
+.order .order-type{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order .order-type .pending-item{
+  flex: 1;
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.other {
+  margin: 20rpx 30rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  border-radius: 6rpx;
+}
+
+.other-item {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  padding-right: 30rpx;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+.other-item:last-child {
+  border-bottom: 0px;
+}
+.other-item::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  content: "";
+  width: 16rpx;
+  height: 16rpx;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  transform: translateY(-50%) rotate(135deg);
+}
+/* 覆盖按钮的默认样式 */
+.other .btn{
+   width:100%;
+   height: 100%;
+   border:none;
+   border-radius: 0;
+   padding:0;
+   margin:0;
+   font-size: 1em;
+   position: static;
+   line-height: normal;
+   color: #333;
+   text-align: left;
+   background: #fff;
+}
+.other .btn::after{
+  content: none;
+}
+.other .iconfont{
+  display: inline-block;
+  line-height: 100rpx;
+  margin-right: 8rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.customer .iconfont{
+  font-size: 38rpx;
+}
+.about .iconfont{
+  opacity: 0.8;
+}

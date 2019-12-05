@@ -1,0 +1,5 @@
+<view class='container'>
+  <view class='banner'>
+    <image src='/assets/images/youcan.jpg' mode='aspectFill'></image>
+  </view>
+</view>
