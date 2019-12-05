@@ -40,15 +40,19 @@ Page({
     const { code, encryptedData, iv } = wx.getStorageSync('userinfo')
     Api.request({
       url: '/login',
-      method: 'post',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
       data: {
         code,
         encryptedData,
         iv
       },
       success(res) {
-        console.log(res)
-        wx.setStorageSync('token', res.token)
+        const storage = wx.getStorageSync('userinfo')
+        wx.setStorageSync('userinfo', { ...storage, openid: res.data.openid })
+        wx.setStorageSync('tokenId', res.data.tokenId)
         wx.navigateBack({
           delta: 1
         })

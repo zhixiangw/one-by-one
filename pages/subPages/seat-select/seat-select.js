@@ -31,12 +31,13 @@ Page({
       title: '正在加载...',
     })
     this.setData({ seqNo })
+  },
+
+  onShow: function () {
+    const { seqNo }  = this.data
     Api.request({
       url: '/seatingPlan',
       method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
       data: {
         seqNo
       },
@@ -283,10 +284,9 @@ Page({
         seats: JSON.stringify(seats)
       },
       success: (res) => {
-        console.log(res)
-        return;
+        const { prepay_id, order_id } = res.data
         wx.navigateTo({
-          url: `/pages/subPages/buy-ticket/buy-ticket`,
+          url: `/pages/subPages/buy-ticket/buy-ticket?prepayId=${prepay_id}&orderId=${order_id}`,
         })
       }
     })

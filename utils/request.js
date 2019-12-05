@@ -3,9 +3,9 @@ const ApiReqest = (config) => {
   wx.request({
     url: `${baseUrl}${config.url}`,
     method: config.method || 'GET',
-    data: { token: wx.getStorageSync('token'), ...config.data },
+    data: { ...config.data },
     header: {
-      token: wx.getStorageSync('token')
+      'token-id': wx.getStorageSync('tokenId')
     },
     success(res) {
       if (res.data.code === 0) {

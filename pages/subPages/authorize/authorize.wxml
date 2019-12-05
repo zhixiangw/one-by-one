@@ -14,7 +14,7 @@
       授权手机号码
     </button>
   </view>
-  <view else>
+  <view wx:else>
     <view class="tip">正在登录中，客官稍作等待。</view>
   </view>
 </view>
