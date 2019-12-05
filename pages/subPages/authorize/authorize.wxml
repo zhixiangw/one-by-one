@@ -11,7 +11,10 @@
   <view wx:elif="{{type==402}}">
     <view class="tip">为了及时短信通知，申请获取您的手机号码</view>
     <button open-type='getPhoneNumber' bindgetphonenumber='bindgetphonenumber' class='btn'>
-        授权手机号码
-      </button>
+      授权手机号码
+    </button>
+  </view>
+  <view else>
+    <view class="tip">正在登录中，客官稍作等待。</view>
   </view>
 </view>

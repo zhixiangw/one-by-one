@@ -36,6 +36,7 @@ Page({
     })
   },
   interfaceLogin() {
+    const _this = this;
     const { code, encryptedData, iv } = wx.getStorageSync('userinfo')
     Api.request({
       url: '/login',
@@ -48,10 +49,22 @@ Page({
       success(res) {
         console.log(res)
         wx.setStorageSync('token', res.token)
-
         wx.navigateBack({
           delta: 1
         })
+      },
+      fail(res) {
+        // code 失效了，被使用过了
+        if (res.code == 405) {
+          _this.setData({ type: res.code })
+          wx.login({
+            success: res => {
+              const storage = wx.getStorageSync('userinfo')
+              wx.setStorageSync('userinfo', { ...storage, code: res.code })
+              _this.interfaceLogin()
+            }
+          })
+        }
       }
     })
   }

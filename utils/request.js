@@ -10,16 +10,16 @@ const ApiReqest = (config) => {
     success(res) {
       if (res.data.code === 0) {
         config.success && config.success(res.data)
-      }
-      if ([401].indexOf(res.data.code) !== -1) {
+      } else if ([401].indexOf(res.data.code) !== -1) {
         // type=401,用户授权基本信息
         wx.navigateTo({
           url: `/pages/subPages/authorize/authorize?type=${res.data.code}`,
         })
-      }
-      if (res.data.code == 3) {
+      } else if (res.data.code == 3) {
         // 登录态过期的操作
         // 重新登录，将token存入storage
+      } else {
+        config.fail && config.fail(res.data)
       }
     },
     fail(res) {
