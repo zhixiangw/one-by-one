@@ -13,7 +13,6 @@ Page({
     },
     nothing: false, //结果是否为空
     cinemas: [], //影院列表
-    cityCinemaInfo: {}, //城市影院信息
     loadComplete: false, //数据是否加载完
   },
   onLoad() {
@@ -46,14 +45,6 @@ Page({
     const _this = this;
     this.getCinemas(this.data.params).then(() => {
       wx.hideLoading()
-    })
-    Api.request({
-      url: '/filterCinemas',
-      success(res) {
-        _this.setData({
-          cityCinemaInfo: res.data
-        })
-      }
     })
   },
   //获取影院列表
