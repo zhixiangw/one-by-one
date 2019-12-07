@@ -10,7 +10,7 @@
           我的订单
         </navigator>
       </view>
-      <view class="order-type">
+      <!-- <view class="order-type">
         <view class="pending-item">
           <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
             <view class='iconfont icon-lianxikefu'></view>
@@ -29,7 +29,7 @@
             <view>待收货</view> 
           </navigator>
         </view>
-      </view>
+      </view> -->
     </view>
     <view class='other'>
       <view class='customer other-item'>
