@@ -184,6 +184,7 @@ Page({
             let seatInfo = item.yCoord + "排" + item.xCoord + "座";
             this.remove(seatInfo);
             totalMoney = parseFloat(this.data.totalMoneyFloat) - parseFloat(this.data.price);
+            totalMoney = totalMoney.toFixed(2)
             totalMoneyStr = totalMoney.toString();
             if (totalMoney == 0) {
               totalMoneyStr = "";
@@ -209,6 +210,7 @@ Page({
               seat.cineSeatId = item.cineSeatId
               this.data.selectSeatList.push(seat);
               totalMoney = parseFloat(this.data.totalMoneyFloat) + parseFloat(this.data.price);
+              totalMoney = totalMoney.toFixed(2)
               totalMoneyStr = totalMoney.toString();
             }
           }
@@ -271,14 +273,11 @@ Page({
     const { orderInfo, selectSeatList, seqNo } = this.data
     const seats = {
       count: selectSeatList.length,
-      list: selectSeatList.map(v => ({ seatNo: v.cineSeatId }))
+      list: selectSeatList.map(v => ({ seatNo: v.cineSeatId, seatName: v.seatInfo, row: v.y, column: v.x }))
     }
     Api.request({
       url: '/createOrder',
       method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
       data: {
         seqNo,
         seats: JSON.stringify(seats)

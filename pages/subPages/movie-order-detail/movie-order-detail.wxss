@@ -114,13 +114,12 @@
 }
 
 .rq {
-  opacity: 0.4;
   text-align: center;
 }
 
 .rq image {
   width: 500rpx;
-  height: 500rpx;
+  height: 840rpx;
   margin: 0 auto;
 }
 

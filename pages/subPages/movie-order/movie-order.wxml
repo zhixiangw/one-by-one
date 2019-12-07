@@ -5,7 +5,7 @@
       <view>{{item.cinemaName}}</view>
       <view class='triangle'></view>
     </navigator>
-    <view class='order-info' bindtap='goTo' data-order='{{item}}'>
+    <view class='order-info' bindtap='goTo' data-orderId='{{item.id}}'>
       <image src='{{item.movieImg}}'></image>
       <view class='order-desc'>
         <view class='movie-name line-ellipsis'>{{item.movieName}} {{item.seatCount}}张</view>

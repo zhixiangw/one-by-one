@@ -54,15 +54,11 @@
   color: #999;
 }
 
-/* showTime不继承order-desc？ */
-
 .order-list-page .showTime, .position {
-  /* 不继承上面的font-size，所以重新写 */
   font-size: 24rpx;
 }
 
 .order-list-page .order-desc .delete-box {
-  /* 多写一个box的原因是增大点击面积 */
   position: absolute;
   padding: 30rpx;
   top: 0;

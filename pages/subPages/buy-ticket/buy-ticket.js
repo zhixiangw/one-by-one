@@ -9,7 +9,6 @@ Page({
       pkg: JSON.parse(decodeURIComponent(params.pkg)) || {}
     }, this.getOrderDetail)
   },
-  //模拟支付
   payment(){
     const { pkg = {} } = this.data
     const { timeStamp, nonceStr, signType, paySign } = pkg;
@@ -21,7 +20,7 @@ Page({
       paySign,
       success: (res) => {
         wx.redirectTo({
-          url: `/pages/subPages/movie-order/movie-order`,
+          url: `/pages/subPages/movie-order-detail/movie-order-detail?orderId=${pkg.order_id}`,
         })
       },
       fail: (res) => {
@@ -40,13 +39,13 @@ Page({
           order: {
             movieImg: movie.img.replace('w.h', '108.150'),
             movieName: movie.name,
-            time: '2019-12-08 11:00', // 电影开播时间
+            time: order.show_time,
             lang: `${movie.ori_lang}${movie.ver}`,
             cinemaName: cinema.name,
-            hall: cinema.hall, // 几号厅
-            price: order.price || 6, // 电影单价
-            salePrice: order.salePrice || 2, // 电影单价优惠售卖价
-            seat: _this.getSeatsName(order.seats),
+            hall: order.hall,
+            price: order.price,
+            salePrice: order.sell_price,
+            seat: order.seatsText.join(','),
             totalMoney: order.amount
           }
         })
@@ -55,8 +54,8 @@ Page({
   },
   getSeatsName(seats) {
     let seatArr = []
-    for (let i = 0; i < o.seats.length; i++) {
-      const name = o.seats[i]
+    for (let i = 0; i < seats.length; i++) {
+      const name = seats[i]
       seatArr.push(name)
     }
     return seatArr.join(',')
