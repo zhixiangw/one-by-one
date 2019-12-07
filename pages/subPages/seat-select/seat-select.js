@@ -284,9 +284,8 @@ Page({
         seats: JSON.stringify(seats)
       },
       success: (res) => {
-        const { prepay_id, order_id } = res.data
         wx.navigateTo({
-          url: `/pages/subPages/buy-ticket/buy-ticket?prepayId=${prepay_id}&orderId=${order_id}`,
+          url: `/pages/subPages/buy-ticket/buy-ticket?pkg=${encodeURIComponent(JSON.stringify(res.data))}`,
         })
       }
     })

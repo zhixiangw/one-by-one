@@ -71,7 +71,7 @@ Page({
     const movie = this.data.movie;
     const info = e.currentTarget.dataset.info;
     wx.navigateTo({
-      url: `/pages/subPages/seat-select/seat-select?seqNo=${info.seqNo}&movieImg=${movie.img}`,
+      url: `/pages/subPages/seat-select/seat-select?seqNo=${info.seqNo}`,
     })
   },
   //处理散场时间

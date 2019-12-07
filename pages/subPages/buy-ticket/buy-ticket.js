@@ -1,22 +1,34 @@
 Page({
   data:{
     order: {},
+    pkg: {},
   },
   onLoad(params){
-    this.setData({ order: wx.getStorageSync('ticketInfo') })
+    this.setData({ 
+      order: {
+        totalMoney: 0.01
+      },
+      pkg: JSON.parse(decodeURIComponent(params.pkg)) || {}
+    })
   },
   //模拟支付
   payment(){
-    wx.showModal({
-      title: '支付结果',
-      content: '支付完成',
+    const { pkg = {} } = this.data
+    const { timeStamp, nonceStr, signType, paySign } = pkg;
+    wx.requestPayment({
+      timeStamp,
+      nonceStr,
+      package: pkg.package,
+      signType,
+      paySign,
       success: (res) => {
-        if (res.confirm) {
-          wx.navigateTo({
-            url: '/pages/subPages/movie-order/movie-order'
-          })
-        }
-      }
+        wx.redirectTo({
+          url: '/pages/subPages/movie-order/movie-order',
+        })
+      },
+      fail: (res) => {
+        console.log('fail', res)
+      },
     })
   }
 })

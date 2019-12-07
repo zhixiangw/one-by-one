@@ -10,6 +10,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -59,7 +60,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "pages/subPages/buy-ticket/buy-ticket",
 					"pathName": "pages/subPages/buy-ticket/buy-ticket",
 					"query": "",
@@ -83,7 +84,7 @@
 					"id": 4,
 					"name": "pages/subPages/seat-select/seat-select",
 					"pathName": "pages/subPages/seat-select/seat-select",
-					"query": "seqNo=201912050121842",
+					"query": "seqNo=201912070120484",
 					"scene": null
 				},
 				{
@@ -108,10 +109,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/subPages/seat-select/seat-select",
-					"pathName": "pages/subPages/seat-select/seat-select",
-					"query": "seqNo=201911140036523&movieImg=http%3A%2F%2Fp0.meituan.net%2F148.208%2Fmoviemachine%2Fc6b78c6badb0280eda5989032475ca341406684.jpg",
+					"id": 8,
+					"name": "pages/subPages/movie-order/movie-order",
+					"pathName": "pages/subPages/movie-order/movie-order",
+					"query": "",
 					"scene": null
 				},
 				{

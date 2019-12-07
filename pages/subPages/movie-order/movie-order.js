@@ -8,7 +8,7 @@ Page({
     this.initData()
   },
   initData(){
-    const orderList = wx.getStorageSync('movieOrder') || []
+    const orderList = []
     this.setData({
       orderList
     })
