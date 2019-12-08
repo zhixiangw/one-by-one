@@ -40,6 +40,13 @@ Page({
     const orderId = e.currentTarget.dataset.orderid
     const order = this.data.orderList.find(o => o.id == orderId)
     if (order.status == 3) {
+      if (!order.can_pay) {
+        return wx.showToast({
+          title: '订单已过期，无法继续支付',
+          duration: 2000,
+          icon: 'none'
+        })
+      }
       Api.request({
         url: `/orderPayParams?order_id=${orderId}`,
         success(res) {

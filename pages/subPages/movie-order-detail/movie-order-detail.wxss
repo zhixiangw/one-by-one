@@ -117,9 +117,13 @@
   text-align: center;
 }
 
+.rq swiper{
+  height: 780rpx;
+}
+
 .rq image {
   width: 500rpx;
-  height: 840rpx;
+  height: 780rpx;
   margin: 0 auto;
 }
 

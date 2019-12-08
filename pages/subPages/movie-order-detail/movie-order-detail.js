@@ -27,11 +27,12 @@ Page({
       }
     })
   },
-  previewImage() {
+  previewImage(e) {
+    const currentIndex = e.currentTarget.dataset.index
     const { order } = this.data
     wx.previewImage({
-      urls: [order.ticketing],
-      current: order.ticketing
+      urls: order.ticketing,
+      current: order.ticketing[currentIndex]
     })
   },
 })
