@@ -100,7 +100,8 @@ Page({
       Api.request({
         url: '/mostExpected',
         data: {
-          limit: 10
+          limit: 10,
+          token: wx.getStorageSync('tokenId')
         },
         success(res) {
           wx.hideLoading()
@@ -112,7 +113,8 @@ Page({
       Api.request({
         url: '/comingList',
         data: {
-          limit: 10
+          limit: 10,
+          token: wx.getStorageSync('tokenId')
         },
         success(res) {
           wx.hideLoading()
