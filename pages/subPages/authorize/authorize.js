@@ -6,17 +6,32 @@ Page({
   onLoad: function (options) {
     const _this = this;
     _this.setData({ type: options.type })
-    wx.getSetting({
-      success(res){
-        // 如果授过权了
-        if (res.authSetting['scope.userInfo']) {
-          _this.interfaceLogin()
+    if (options.type === 401) {
+      wx.getSetting({
+        success(res){
+          // 如果授过权了
+          if (res.authSetting['scope.userInfo']) {
+            _this.interfaceLogin()
+          }
         }
-      }
-    })
+      })
+    }
   },
   bindgetphonenumber(res) {
-    console.log(res)
+    if (res.detail.iv) {
+      const { iv, encryptedData } = res.detail
+      Api.request({
+        url: '/saveUserPhone',
+        method: 'post',
+        data: {
+          iv,
+          encryptedData
+        },
+        success(res) {
+          wx.navigateBack({ delta: 1 });
+        }
+      })
+    }
   },
   bindgetuserinfo(res) {
     if (res.detail.iv) {
@@ -53,9 +68,7 @@ Page({
         const storage = wx.getStorageSync('userinfo')
         wx.setStorageSync('userinfo', { ...storage, openid: res.data.openid })
         wx.setStorageSync('tokenId', res.data.tokenId)
-        wx.navigateBack({
-          delta: 1
-        })
+        wx.navigateBack({ delta: 1 })
       },
       fail(res) {
         // code 失效了，被使用过了

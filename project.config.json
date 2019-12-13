@@ -63,7 +63,7 @@
 					"id": 1,
 					"name": "pages/subPages/buy-ticket/buy-ticket",
 					"pathName": "pages/subPages/buy-ticket/buy-ticket",
-					"query": "pkg=%7B%22appId%22%3A%22wx2aee737c548bfbc9%22%2C%22timeStamp%22%3A%221575711841%22%2C%22nonceStr%22%3A%22z8C1cHUcxpvDe1Jt%22%2C%22package%22%3A%22prepay_id%3Dwx07174401248418eaf9d629e91310595700%22%2C%22signType%22%3A%22MD5%22%2C%22paySign%22%3A%22C357DE0A59EEDFCF7D1D7DA43135C9AE%22%2C%22timestamp%22%3A%221575711841%22%2C%22order_id%22%3A49%7D",
+					"query": "pkg=%7B%22appId%22%3A%22wx2aee737c548bfbc9%22%2C%22timeStamp%22%3A%221576248518%22%2C%22nonceStr%22%3A%22PNW92D6kOZCKYZkD%22%2C%22package%22%3A%22prepay_id%3Dwx132248384663690df9340e191845521500%22%2C%22signType%22%3A%22MD5%22%2C%22paySign%22%3A%2282F3390AB2772843DBDC59B3042D84C9%22%2C%22timestamp%22%3A%221576248518%22%2C%22order_id%22%3A69%7D",
 					"scene": null
 				},
 				{

@@ -43,8 +43,13 @@
         </button>
       </view>
       <view class='customer other-item'>
-        <button open-type='contact' class='btn' hover-class='none'>
-          <text class='iconfont icon-lianxikefu'></text> 专属客服
+        <button class='btn' hover-class='none' bindtap="subscribeMessage">
+          <text class='iconfont icon-zan1'></text> 订阅消息
+        </button>
+      </view>
+      <view class='customer other-item'>
+        <button class='btn' hover-class='none' bindtap="openSetting">
+          <text class='iconfont icon-zan1'></text> 用户设置
         </button>
       </view>
       <view class='about other-item'>

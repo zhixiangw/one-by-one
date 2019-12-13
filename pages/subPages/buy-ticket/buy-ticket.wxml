@@ -20,6 +20,12 @@
       <view class='server'>{{order.seat}}</view>
     </view>
   </view>
+  <view class='section'>
+    <view class='section-title'>手机号  {{order.phone}}</view>
+    <view class='section-content'>
+      <view>手机号码仅用于生成订单，取票码不再以短信发送</view>
+    </view>
+  </view>
   <view class='section section-bottom'>
     <view class='section-title'>购票须知</view>
     <view class='section-content'>

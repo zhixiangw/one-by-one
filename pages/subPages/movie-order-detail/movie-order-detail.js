@@ -21,7 +21,7 @@ Page({
             cinemaId: cinema.cinema_id,
             hall: order.hall,
             seat: order.seatsText.join(','),
-            ticketing: order.ticketing
+            ticketing: order.ticketing && JSON.parse(order.ticketing) || []
           }
         })
       }

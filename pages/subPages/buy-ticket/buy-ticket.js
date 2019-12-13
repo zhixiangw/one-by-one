@@ -19,8 +19,21 @@ Page({
       signType,
       paySign,
       success: (res) => {
-        wx.redirectTo({
-          url: `/pages/subPages/movie-order-detail/movie-order-detail?orderId=${pkg.order_id}`,
+        wx.requestSubscribeMessage({
+          tmplIds: [
+            'XamayYPbc8pidJL7BXI4Mmptxv0gSz_qdoqi_dYMhg8',
+            'esvzRq38cegYlEgMCDgFIssc9Im1Ums1VF_WX3F1RZE'
+          ],
+          success: (res) => {
+            if (res.errMsg === 'requestSubscribeMessage:ok') {
+              console.log('允许订阅消息')
+            }
+          },
+          complete: () => {
+            wx.redirectTo({
+              url: `/pages/subPages/movie-order-detail/movie-order-detail?orderId=${pkg.order_id}`,
+            })
+          }
         })
       },
       fail: (res) => {
@@ -43,6 +56,7 @@ Page({
             lang: `${movie.ori_lang}${movie.ver}`,
             cinemaName: cinema.name,
             hall: order.hall,
+            phone: order.phone,
             price: order.price,
             salePrice: order.sell_price,
             seat: order.seatsText.join(','),

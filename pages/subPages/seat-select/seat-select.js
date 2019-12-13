@@ -30,10 +30,10 @@ Page({
     wx.showLoading({
       title: '正在加载...',
     })
-    this.setData({ seqNo })
+    this.setData({ seqNo }, this.init)
   },
 
-  onShow: function () {
+  init: function () {
     const { seqNo }  = this.data
     Api.request({
       url: '/seatingPlan',

@@ -1,9 +1,42 @@
+const Api = require('../../../utils/request.js')
+
 Page({
   bindgetphonenumber(res){
-    console.log(res)
+    if (res.detail.iv) {
+      const { iv, encryptedData } = res.detail
+      Api.request({
+        url: '/saveUserPhone',
+        method: 'post',
+        data: {
+          iv,
+          encryptedData
+        },
+        success(res) {
+          wx.showToast({
+            title: '绑定成功',
+            icon: 'none'
+          })
+        }
+      })
+    }
   },
-  bindgetuserinfo(res){
-    console.log(res)
+  subscribeMessage: () => {
+    wx.requestSubscribeMessage({
+      tmplIds: [
+        'XamayYPbc8pidJL7BXI4Mmptxv0gSz_qdoqi_dYMhg8', 
+        'esvzRq38cegYlEgMCDgFIssc9Im1Ums1VF_WX3F1RZE'
+      ],
+      success: (res) => {
+        console.log(res)
+        wx.showToast({
+          title: '您已订阅消息，可点击用户设置按钮进行查看',
+          icon: 'none'
+        })
+      },
+    })
+  },
+  openSetting: () => {
+    wx.openSetting()
   },
   onShareAppMessage(res){
     return {
