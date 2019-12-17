@@ -1,10 +1,15 @@
+const util = require('../../../utils/util.js')
+const Api = require('../../../utils/request.js')
+const app = getApp();
+
 Page({
   data: {
     value: '',
     stype: '',
     placeholder: '',
-    movies: {},
-    cinemas: {}
+    cinemas: [],
+    hasMore: true,
+    offset: 0
   },
   onLoad(query) {
    this.initPage(query)
@@ -25,21 +30,35 @@ Page({
   },
   search(e) {
     const value = e.detail.value
-    const _this = this
     this.setData({
-      value
-    })
-    wx.request({
-      url: `https://m.maoyan.com/ajax/search?kw=${value}&cityId=57&stype=${_this.data.stype}`, //没有获取猫眼城市ID的API，所以这里的城市ID只能写死，去掉城市ID会404
+      value,
+      offset: 0,
+      cinemas: [],
+      hasMore: true
+    }, this.queryList)
+  },
+  queryList() {
+    const { offset, value, cinemas, hasMore } = this.data
+    if (!hasMore) {
+      return null;
+    }
+    const _this = this
+    const params = {
+      day: util.getToday(),
+      offset,
+      limit: 20,
+      lat: app.globalData.userLocation.latitude,
+      lng: app.globalData.userLocation.longitude,
+      keyword: value
+    }
+    Api.request({
+      url: '/cinemaList',
+      data: params,
       success(res) {
-        let movies = res.data.movies ? res.data.movies.list : []
-        movies = movies.map(item=>{
-          item.img = item.img.replace('w.h','128.180')
-          return item
-        })
         _this.setData({
-          movies: movies,
-          cinemas: res.data.cinemas ? res.data.cinemas.list : []
+          cinemas: cinemas.concat(res.data.cinemas),
+          hasMore: res.data.paging.hasMore,
+          offset: res.data.paging.hasMore ? offset + 20 : offset
         })
       }
     })
@@ -48,5 +67,8 @@ Page({
     wx.navigateBack({
       delta: 1
     })
+  },
+  onReachBottom() {
+    this.queryList()
   }
 })

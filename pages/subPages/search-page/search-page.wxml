@@ -12,7 +12,7 @@
       <template is="cinemaSection" wx:for='{{cinemas}}' wx:for-item='cinema' wx:key='index' data='{{cinema}}' />
     </view>
   </view>
-  <view hidden='{{movies.length || cinemas.length || !value}}'>
+  <view hidden='{{cinemas.length || !value}}'>
     <template is='nothing' data='{{message:"没有找到相关内容"}}' />
   </view>
 </view>
