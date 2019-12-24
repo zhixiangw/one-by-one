@@ -11,9 +11,15 @@ page{
 }
 
 .titleContainer {
-  margin-top: 20rpx;
+  padding-top: 20rpx;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
 }
 
 .cinemaName{
@@ -89,7 +95,7 @@ page{
 .movable-view {
   height: 20%;
   width: 20%;
-  top: 300rpx;
+  top: 500rpx;
   left: 350rpx;
   display: flex;
   flex-direction: row;
@@ -126,13 +132,16 @@ page{
   color: #bdbdbd;
 }
 
+.hallTitle-box {
+  background-color: #f7f7f7;
+}
+
 .hallTitle {
   display: flex;
-  flex-direction: row;
+  margin: 0 auto;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0;
   width: 460rpx;
   background: #e2e2e2;
   border-bottom-left-radius: 90rpx;

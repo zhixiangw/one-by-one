@@ -12,12 +12,12 @@
         <text>已售</text>
       </view>
     </view>
+    <view class='hallTitle-box'>
+      <view class="hallTitle"><text>{{hallName}}</text></view>
+    </view>
   </view>
   <movable-area class="movable-area" scale-area="true">
-    <view class='hallTitle'>
-      <text>{{hallName}}</text>
-    </view>
-    <movable-view id='movable-view' class="movable-view" direction="all" bindchange="onChange" bindscale="onScale" scale="true" scale-min="0.5" scale-max="2" scale-value="1" inertia="true">
+    <movable-view id='movable-view' class="movable-view" direction="all" bindchange="onChange" bindscale="onScale" scale="true" scale-min="0.5" scale-max="2" scale-value="{{scaleValue}}" inertia="true">
       <view class='downContainer' id='seatView'>
         <view class='seatView'>
           <view class='x' wx:for="{{seat}}" wx:for-index="idx" wx:for-item="xSeat" wx:key="index">

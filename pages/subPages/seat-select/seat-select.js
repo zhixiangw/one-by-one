@@ -20,6 +20,7 @@ Page({
     totalMoneyFloat: 0.00,
     movie: [],
     price: 0,
+    scaleValue: 1, // 默认缩放倍数
     orderInfo: {}
   },
 
@@ -85,6 +86,7 @@ Page({
       }
     }
     let totalArray = [];
+    let maxLen = 0
     for (let b = 0; b < yArray.length; b++) {
       let xxA = [];
       for (let c = 0; c < this.data.seats.length; c++) {
@@ -102,12 +104,20 @@ Page({
           xxA.push(this.data.seats[c]);
         }
       }
+      maxLen = Math.max(xxA.length, maxLen)
       totalArray.push(xxA);
+    }
+    let scaleValue = 1
+    if (maxLen >= 25 && maxLen < 36) {
+      scaleValue = 0.7
+    } else if (maxLen >= 36) {
+      scaleValue = 0.5
     }
     this.setData({
       seat: totalArray,
       lineArray: yArray,
-      columnNumber: yArray.length
+      columnNumber: yArray.length,
+      scaleValue
     })
 
     const query = wx.createSelectorQuery()
