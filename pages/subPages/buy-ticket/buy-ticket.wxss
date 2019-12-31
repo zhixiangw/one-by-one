@@ -83,9 +83,14 @@
   color: #999;
 }
 
-.price-box .price-num {
+.price-box .vip-price, .price-box .vip-price .price-num{
+  font-size: 36rpx;
+  font-weight: bold;
   color: #f03d37;
-  font-size: 30rpx;
+}
+
+.price-box .price-num {
+  font-size: 24rpx;
 }
 
 .footer{

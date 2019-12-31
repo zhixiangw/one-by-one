@@ -3,15 +3,15 @@
 <import src='../../../templates/cinemaSection/cinemaSection.wxml' />
 
 <view class='container'>
-  <view class='topbar' style="height: {{cityTop + 40}}px">
-    <navigator style="top: {{cityTop}}px" class='city-entry' url='../../subPages/city-select/city-select'>
+  <view class='topbar'>
+    <navigator class='city-entry' url='../../subPages/city-select/city-select'>
       <text class='city-name'>{{city}}</text>
       <text class='city-entry-arrow'></text>
     </navigator>
-    <navigator style="top: {{cityTop}}px" url='../../subPages/search-page/search-page?stype=2' class='search-input'>
-      <text class='iconfont icon-sousuo'></text>影院名称</navigator>
+    <navigator url='../../subPages/search-page/search-page?stype=2' class='search-input'>
+      <text class='iconfont icon-sousuo'></text>找影院</navigator>
   </view>
-  <view class='cinema-list' style="margin-top: {{cityTop + 40}}px">
+  <view class='cinema-list'>
    <template is="cinemaSection" wx:for='{{cinemas}}' wx:for-item='cinema' wx:key='index' data='{{cinema}}'/>
   </view>
   <view wx:if='{{!loadComplete && cinemas.length}}'>

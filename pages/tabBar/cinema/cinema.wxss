@@ -1,13 +1,10 @@
 @import '/templates/cinemaSection/cinemaSection.wxss';
 .topbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  border: none;
-  background-color: #e54847;
+  background-color: #dedede;
   display: flex;
   align-items: center;
+  height: 46px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .city-entry {
@@ -15,13 +12,10 @@
   height: 32px;
   font-size: 26rpx;
   color: #999;
-  position: absolute;
   display: -webkit-box;
   -webkit-box-align: center;
   -webkit-box-pack: center;
   padding: 0 15px;
-  border-radius: 32px;
-  background: #fff;
 }
 .city-name {
   white-space: nowrap;
@@ -41,18 +35,15 @@
   margin-top: 8rpx;
 }
 .search-input {
-  width: 300rpx;
+  flex: 1;
   height: 32px;
-  margin: 0 auto;
+  margin: 0 20rpx;
   font-size: 26rpx;
   color: #999;
-  border-radius: 32px;
+  border-radius: 4px;
   background: #fff;
   line-height: 32px;
   text-align: center;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
 }
 
 .icon-sousuo {

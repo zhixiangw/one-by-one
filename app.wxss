@@ -31,7 +31,7 @@
   color: #fff;
   border-radius: 8rpx;
   white-space: nowrap;
-  font-size: 24rpx;
+  font-size: 28rpx;
   border: none;
 }
 

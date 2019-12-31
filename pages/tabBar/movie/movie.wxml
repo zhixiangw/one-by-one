@@ -2,11 +2,14 @@
 <import src='../../../templates/movieSection/movieSection.wxml' />
 
 <view class="container">
-  <view class="banner">
-    <navigator style="top: {{cityTop}}px" class='city-entry' url='../../subPages/city-select/city-select'>
+  <view class="navbar" style="padding-top: {{cityTop}}px">
+    <navigator class='city-entry' url='../../subPages/city-select/city-select'>
       <text class='city-name'>{{city}}</text>
       <text class='city-entry-arrow'></text>
     </navigator>
+    <view class="nav-title">首页</view>
+  </view>
+  <view class="banner">
     <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
       <block wx:for="{{banner}}" wx:key="index">
         <swiper-item>

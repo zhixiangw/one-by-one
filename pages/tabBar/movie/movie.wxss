@@ -13,19 +13,35 @@
   position: relative;
 }
 
+.navbar{
+  position: relative;
+  height: 64rpx;
+  padding-bottom: 20rpx;
+  background-color: #e54847;
+  text-align: center;
+  color: #fff;
+}
+
+.navbar .nav-title {
+  color: white;
+  font-size: 26rpx;
+  line-height: 64rpx;
+}
+
 .city-entry {
   z-index: 9;
   left: 15px;
-  height: 32px;
+  height: 28px;
+  margin-top: 2px;
   font-size: 26rpx;
-  color: #333;
+  color: #fff;
   position: absolute;
   display: -webkit-box;
   -webkit-box-align: center;
   -webkit-box-pack: center;
-  padding: 0 15px;
-  border-radius: 32px;
-  background: rgba(255, 255, 255, .7);
+  padding: 0 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, .15);
 }
 .city-name {
   white-space: nowrap;
@@ -36,7 +52,7 @@
 .city-entry-arrow {
   width: 0;
   height: 0;
-  border: 8rpx solid #333;
+  border: 8rpx solid #fff;
   border-left-color: transparent;
   border-right-color: transparent;
   border-bottom-color: transparent;

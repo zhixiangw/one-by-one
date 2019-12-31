@@ -5,7 +5,6 @@ const app = getApp();
 Page({
   data: {
     city: '正在定位...',
-    cityTop: app.globalData.systemInfo.menuTop,
     params: { //url请求参数对象
       day: util.getToday(),
       offset: 0,
