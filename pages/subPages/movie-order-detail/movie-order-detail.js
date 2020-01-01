@@ -12,6 +12,7 @@ Page({
       url: `/orderDetail?order_id=${orderId}`,
       success(res) {
         const { cinema, movie, order } = res.data
+        const ticketing = order.ticketing || []
         _this.setData({
           order: {
             movieName: movie.name,
@@ -21,7 +22,7 @@ Page({
             cinemaId: cinema.cinema_id,
             hall: order.hall,
             seat: order.seatsText.join(','),
-            ticketing: order.ticketing || []
+            ticketing: Array.isArray(ticketing) ? ticketing : JSON.parse(ticketing)
           }
         })
       }
