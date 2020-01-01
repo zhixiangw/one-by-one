@@ -4,7 +4,7 @@
 
 <view class='container'>
   <view class='top'>
-    <view>
+    <view wx:if="{{showTime}}">
       <select-time start-time='{{showTime}}' bindselectDayEvent='changeTime'></select-time>
     </view>
   </view>
