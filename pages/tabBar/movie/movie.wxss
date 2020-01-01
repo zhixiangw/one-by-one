@@ -61,10 +61,12 @@
   margin-top: 8rpx;
 }
 swiper{
-  height: 330rpx;
+  height: 280rpx;
 }
 .slide-image{
   width: 100%;
+  height: 280rpx;
+  display: block;
 }
 .switch-hot {
   display: flex;

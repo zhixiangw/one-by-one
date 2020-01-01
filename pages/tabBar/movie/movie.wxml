@@ -13,7 +13,7 @@
     <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
       <block wx:for="{{banner}}" wx:key="index">
         <swiper-item>
-          <navigator url="{{item.url}}"><image src="{{item.image}}" class="slide-image"/></navigator>
+          <navigator url="{{item.url}}"><image src="{{item.image}}" mode="aspectFit" class="slide-image"/></navigator>
         </swiper-item>
       </block>
     </swiper>

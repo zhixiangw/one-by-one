@@ -3,7 +3,7 @@ const app = getApp()
 
 Page({
   data: {
-    scrollViewHeight: app.globalData.systemInfo.windowHeightRpx - 330 - 88,
+    scrollViewHeight: app.globalData.systemInfo.windowHeightRpx - 280 - 134 - 90,
     cityTop: app.globalData.systemInfo.menuTop,
     city: '正在定位...',
     banner: [],
