@@ -31,11 +31,11 @@
         <view class='price box'>
           <view class='price-box line-ellipsis'>
             <view class="sellPr">
-              <text class="stonefont">{{item.sellPrice}}</text>
-              <text class="d">元</text>
+              <text class="d">会员价：</text>
+              <text class="stonefont">{{item.sellPrice}}元</text>
             </view>
           </view>
-          <view class='discount line-ellipsis' wx:if='{{item.extraDesc}}'>{{item.extraDesc}}</view>
+          <view class='discount'>原价：{{item.price}}</view>
         </view>
         <view class='button-block'>
           <view class='button'>选座</view>
