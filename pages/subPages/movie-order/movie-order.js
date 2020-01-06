@@ -26,6 +26,7 @@ Page({
               seatCount: o.seats.length,
               time: o.show_time,
               hall: o.hall,
+              canPay: o.can_pay,
               seat: o.seatsText && o.seatsText.join(','),
               totalMoney: o.amount,
               statusName: o.statusText
@@ -40,7 +41,7 @@ Page({
     const orderId = e.currentTarget.dataset.orderid
     const order = this.data.orderList.find(o => o.id == orderId)
     if (order.status == 3) {
-      if (!order.can_pay) {
+      if (!order.canPay) {
         return wx.showToast({
           title: '订单已过期，无法继续支付',
           duration: 2000,
