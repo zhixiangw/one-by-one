@@ -42,16 +42,6 @@
           <text class='iconfont icon-fenxiang1'></text> 分享给朋友
         </button>
       </view>
-      <view class='customer other-item'>
-        <button class='btn' hover-class='none' bindtap="subscribeMessage">
-          <text class='iconfont icon-zan1'></text> 订阅消息
-        </button>
-      </view>
-      <view class='customer other-item'>
-        <button class='btn' hover-class='none' bindtap="openSetting">
-          <text class='iconfont icon-zan1'></text> 用户设置
-        </button>
-      </view>
       <view class='about other-item'>
         <navigator url='../../subPages/about-page/about-page' hover-class='none'>
           <text class='iconfont icon-guanyuwomen'></text> 关于

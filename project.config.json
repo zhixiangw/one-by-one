@@ -135,6 +135,13 @@
 					"pathName": "pages/subPages/movie-order-detail/movie-order-detail",
 					"query": "orderId=59",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/subPages/about-page/about-page",
+					"pathName": "pages/subPages/about-page/about-page",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
