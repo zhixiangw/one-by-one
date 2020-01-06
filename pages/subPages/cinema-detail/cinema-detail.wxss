@@ -102,21 +102,21 @@
 
 .price-box {
   display: flex;
-  /* flex-wrap: wrap; */
   height: 40rpx;
   align-items: flex-end;
 }
 
 .sellPr {
+  text-align: right;
+  width: 100%;
   line-height: 1;
   color: #f03d37;
   margin-top: 1px;
-  font-size: 38rpx;
-  margin-right: 10rpx;
+  font-size: 34rpx;
 }
 
 .d {
-  font-size: 22rpx;
+  font-size: 24rpx;
 }
 
 .vipPrice {
@@ -146,7 +146,9 @@
 
 .discount {
   color: #999;
-  font-size: 22rpx;
+  font-size: 24rpx;
+  text-align: right;
+  margin-right: 10rpx;
 }
 
 .button-block {
