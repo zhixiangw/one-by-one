@@ -21,17 +21,20 @@ Page({
     movie: [],
     price: 0,
     scaleValue: 1, // 默认缩放倍数
-    orderInfo: {}
+    orderInfo: {},
+    cinemaId: "",
+    movieId: "",
+    day: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function ({ seqNo }) {
+  onLoad: function ({ seqNo, cinemaId, movieId, day }) {
     wx.showLoading({
       title: '正在加载...',
     })
-    this.setData({ seqNo }, this.init)
+    this.setData({ seqNo, cinemaId, movieId, day }, this.init)
   },
 
   init: function () {
@@ -50,6 +53,27 @@ Page({
             duration: 2000,
             icon: 'none'
           })
+          if (res.data.seatError.code === 10051) {
+            //场次信息不存在
+            let pages = getCurrentPages(); //页面栈
+            let beforePage = pages[pages.length - 2];
+            const onloadData = {
+              cinemaId: this.data.cinemaId,
+              movieId: this.data.movieId,
+              day: this.data.day
+            }
+            setTimeout(()=>{
+               wx.navigateBack({
+                delta: 1, //返回的页面数，如果 delta 大于现有页面数，则返回到首页。
+                success: function () {
+                  if (beforePage.route == 'pages/subPages/cinema-detail/cinema-detail') {
+                    beforePage.onLoad(onloadData) //这个函数式调用接口的函数
+                  }
+                }
+              })
+            }, 2000)
+
+          }
         } else {
           const { cinema, hall, movie, price, show, seat } = res.data.seatData
           this.setData({

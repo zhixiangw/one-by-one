@@ -5,6 +5,7 @@ Page({
   data: {
     cinemaId: '',
     movieId: '',
+    day: '',
     cinemaDetail: null, //影院详情
     movie: null, //选中的电影
     movies:null, //电影列表
@@ -38,6 +39,7 @@ Page({
           cinemaDetail: res.data,
           movies: _this.formatMovie(res.data.showData.movies),
         })
+        wx.setNavigationBarTitle({ title: res.data.cinemaData.nm })
       }
     })
   },
@@ -71,7 +73,7 @@ Page({
     const movie = this.data.movie;
     const info = e.currentTarget.dataset.info;
     wx.navigateTo({
-      url: `/pages/subPages/seat-select/seat-select?seqNo=${info.seqNo}`,
+      url: `/pages/subPages/seat-select/seat-select?seqNo=${info.seqNo}&cinemaId=${this.data.cinemaId}&movieId=${this.data.movieId}&day=${this.data.day}`,
     })
   },
   //处理散场时间

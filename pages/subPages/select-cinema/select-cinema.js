@@ -61,7 +61,6 @@ Page({
   },
   //当选择的时间变化时触发
   changeTime(e){
-    console.log(222)
     const day = e.detail.day
     this.setData({
       params: { ...this.data.params,day},

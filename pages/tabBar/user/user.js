@@ -27,7 +27,6 @@ Page({
         'esvzRq38cegYlEgMCDgFIssc9Im1Ums1VF_WX3F1RZE'
       ],
       success: (res) => {
-        console.log(res)
         wx.showToast({
           title: '您已订阅消息，可点击用户设置按钮进行查看',
           icon: 'none'
