@@ -22,6 +22,7 @@ Page({
             cinemaId: cinema.cinema_id,
             hall: order.hall,
             seat: order.seatsText.join(','),
+            status: order.status,
             ticketing: Array.isArray(ticketing) ? ticketing : JSON.parse(ticketing)
           }
         })

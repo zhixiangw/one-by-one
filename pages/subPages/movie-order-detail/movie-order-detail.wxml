@@ -14,15 +14,16 @@
       <view class='divider'></view>
     </view>
     <view class='code-container'>
-      <view class='rq'>
+      <view class='rq' wx:if="{{order.status !== 1}}">
         <swiper indicator-dots="{{true}}" autoplay="{{false}}" duration="{{500}}">
           <block wx:for="{{order.ticketing}}" wx:key="index">
             <swiper-item>
-              <image src='{{item}}' mode='aspectFit' data-index="{{index}}" ></image>
+              <image bindtap="previewImage" src='{{item}}' mode='aspectFit' data-index="{{index}}" ></image>
             </swiper-item>
           </block>
         </swiper>
       </view>
+      <view wx:else><image src='../../../assets/images/ticketing.png' mode='aspectFit' style="display: block;margin: 0 auto;" ></image></view>
     </view>
   </view>
 </view>
