@@ -78,7 +78,7 @@ Page({
           movieList0,
           banner: res.data.banner || []
         })
-        if (res.data.movieList.length >= res.data.movieIds.length) {
+        if (!res.data.movieIds || res.data.movieList.length >= res.data.movieIds.length) {
           _this.setData({
             loadComplete0: true
           })
