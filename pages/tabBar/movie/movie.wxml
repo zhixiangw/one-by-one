@@ -1,5 +1,6 @@
 
 <import src='../../../templates/movieSection/movieSection.wxml' />
+<import src='../../../templates/nothing/nothing.wxml' />
 
 <view class="container">
   <view class="navbar" style="padding-top: {{cityTop}}px">
@@ -27,6 +28,9 @@
   <scroll-view style="height: {{scrollViewHeight}}rpx;" bindscrolltolower='loadmore' scroll-y class="switch-content">
     <view hidden="{{switchItem==1}}">
       <template is='movieSection' wx:for='{{movieList0}}' wx:for-item='movie' wx:key='index' data='{{movie:movie}}'/>
+      <view hidden='{{ movieList0.length}}'>
+        <template is='nothing' data='{{message:"暂无热映电影"}}' />
+      </view>
     </view>
     <view hidden="{{switchItem==0}}">
       <view class='most-expected' wx:if='{{mostExpectedList.length}}'>

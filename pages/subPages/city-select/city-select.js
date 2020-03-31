@@ -37,7 +37,7 @@ Page({
       })
       this.setData({
         navTop: res[0].top,
-        navItemHeight: res[1].height,
+        navItemHeight: res[1] ? res[1].height: 0,
         sections
       })
     })
@@ -103,7 +103,7 @@ Page({
       items:[]
     };
     //判断是否获得用户定位城市
-    if (app.globalData.userLocation.status===1){
+    if (app.globalData.userLocation && app.globalData.userLocation.status===1){
       let city = citys.find(item => item.nm === app.globalData.userLocation.cityName) || { city_name: '定位失败，请点击重试'}
       current.items = [city]
     } else {
