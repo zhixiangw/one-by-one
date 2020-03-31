@@ -42,6 +42,11 @@
           <text class='iconfont icon-fenxiang1'></text> 分享给朋友
         </button>
       </view>
+      <view class='customer other-item'>
+        <button open-type='contact' bindcontact="handleContact" class='btn' hover-class='none'>
+          <text class='iconfont icon-lianxikefu'></text> 联系客服
+        </button>
+      </view>
       <view class='about other-item'>
         <navigator url='../../subPages/about-page/about-page' hover-class='none'>
           <text class='iconfont icon-guanyuwomen'></text> 关于

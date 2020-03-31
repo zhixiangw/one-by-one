@@ -142,6 +142,13 @@
 					"pathName": "pages/subPages/about-page/about-page",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tabBar/user/user",
+					"pathName": "pages/tabBar/user/user",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

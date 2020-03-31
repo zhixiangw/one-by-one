@@ -71,14 +71,15 @@ Page({
     Api.request({
       url: '/movieOnInfoList',
       success(res) {
+        const movieIds = res.data.movieIds || []
         const movieList0 = _this.formatImgUrl(res.data.movieList)
         wx.hideLoading()
         _this.setData({
-          movieIds0: res.data.movieIds,
+          movieIds0: movieIds,
           movieList0,
           banner: res.data.banner || []
         })
-        if (res.data.movieList.length >= res.data.movieIds.length) {
+        if (res.data.movieList.length >= movieIds.length) {
           _this.setData({
             loadComplete0: true
           })
