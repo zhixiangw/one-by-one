@@ -118,6 +118,8 @@ Page({
           if (this.data.seats[c].type == "danren") {
             if (this.data.seats[c].status == "ok") {
               this.data.seats[c].iconSrc = "/assets/icon/seatPre.png";
+            } else if (this.data.seats[c].status == "disabled") {
+              this.data.seats[c].iconSrc = "/assets/icon/seatDisabled.png";
             } else {
               this.data.seats[c].iconSrc = "/assets/icon/seatDone.png";
             }
@@ -165,7 +167,7 @@ Page({
         yCoord: seat.rowId,
         row: row.rowNum,
         column: index - 1,
-        status: seat.seatStatus === 1 ? 'ok' : 'booked',
+        status: seat.seatStatus === 1 ? 'ok' : (seat.seatStatus === 4 ? 'disabled' : 'booked') ,
         type: seat.seatType === 'N' ? 'danren' : 'road',
       })))
     })

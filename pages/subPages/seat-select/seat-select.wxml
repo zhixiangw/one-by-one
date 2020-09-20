@@ -8,6 +8,10 @@
         <text>可选</text>
       </view>
       <view class='seatIcon'>
+        <image src='/assets/icon/seatDisabled.png'></image>
+        <text>不可选</text>
+      </view>
+      <view class='seatIcon'>
         <image src='/assets/icon/seatDone.png'></image>
         <text>已售</text>
       </view>

@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -84,7 +84,7 @@
 					"id": 4,
 					"name": "pages/subPages/seat-select/seat-select",
 					"pathName": "pages/subPages/seat-select/seat-select",
-					"query": "seqNo=202001140063881",
+					"query": "seqNo=202009200081791&cinemaId=234&movieId=1210778&day=2020-09-21",
 					"scene": null
 				},
 				{
