@@ -1,6 +1,6 @@
 <view class='container'>
   <view class='logo'>
-    <image src='/assets/images/logo.jpg' mode='aspectFill'></image>
+    <image src='/assets/images/logo.jpeg' mode='aspectFill'></image>
   </view>
   <view wx:if="{{type==401}}">
     <view class="tip">为了更好的服务，申请获取您的公开信息(昵称、头像等)</view>

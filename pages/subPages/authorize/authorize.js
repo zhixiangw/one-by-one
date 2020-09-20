@@ -52,7 +52,7 @@ Page({
   },
   interfaceLogin() {
     const _this = this;
-    const { code, encryptedData, iv } = wx.getStorageSync('userinfo')
+    const { code, encryptedData, iv, rawData, signature } = wx.getStorageSync('userinfo')
     Api.request({
       url: '/login',
       method: 'POST',
@@ -62,6 +62,8 @@ Page({
       data: {
         code,
         encryptedData,
+        rawData,
+        signature,
         iv
       },
       success(res) {

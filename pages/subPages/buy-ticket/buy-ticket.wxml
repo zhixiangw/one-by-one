@@ -10,7 +10,7 @@
           <view>{{order.hall}}</view>
         </view>
         <view class="price-box">
-          <view class="vip-price">会员价：<text class="price-num">{{order.salePrice}}元</text></view>
+          <view class="vip-price">补贴价：<text class="price-num">{{order.salePrice}}元</text></view>
           <view>市场价：<text class="price-num">{{order.price}}元</text></view>
         </view>
       </view>

@@ -21,15 +21,21 @@ Page({
       success: (res) => {
         wx.requestSubscribeMessage({
           tmplIds: [
+            // 'os7aOn8gERibddo75lXcUMtdTyL6LQ1ErLPL6aOquAg',
             'XamayYPbc8pidJL7BXI4Mmptxv0gSz_qdoqi_dYMhg8',
             'esvzRq38cegYlEgMCDgFIssc9Im1Ums1VF_WX3F1RZE'
           ],
           success: (res) => {
+            console.log('success', res)
             if (res.errMsg === 'requestSubscribeMessage:ok') {
               console.log('允许订阅消息')
             }
           },
+          fail: (res) => {
+            console.log('fail',res)
+          },
           complete: () => {
+            console.log("1")
             wx.redirectTo({
               url: `/pages/subPages/movie-order-detail/movie-order-detail?orderId=${pkg.order_id}`,
             })

@@ -23,6 +23,7 @@ Page({
   subscribeMessage: () => {
     wx.requestSubscribeMessage({
       tmplIds: [
+        // 'os7aOn8gERibddo75lXcUMtdTyL6LQ1ErLPL6aOquAg',
         'XamayYPbc8pidJL7BXI4Mmptxv0gSz_qdoqi_dYMhg8', 
         'esvzRq38cegYlEgMCDgFIssc9Im1Ums1VF_WX3F1RZE'
       ],

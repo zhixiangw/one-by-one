@@ -31,7 +31,7 @@
         <view class='price box'>
           <view class='price-box line-ellipsis'>
             <view class="sellPr">
-              <text class="d">会员价：</text>
+              <text class="d">补贴价：</text>
               <text class="stonefont">{{item.sellPrice}}元</text>
             </view>
           </view>
