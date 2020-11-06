@@ -4,37 +4,40 @@
     <open-data type="userNickName" class='name'></open-data>
   </view>
   <view>
+    <view class="menus">
+      <view class="order-type">
+        <view class="pending-item">
+          <navigator url='../../subPages/gyt/gyt' hover-class='none'>
+            <image class="mobile-icon" src="../../../assets/icon/gyt.png"></image>
+            <view>观影通</view>
+          </navigator>
+        </view>
+        <view class="pending-item">
+          <navigator url='../../subPages/mpdhq/mpdhq' hover-class='none'>
+            <image class="mobile-icon" src="../../../assets/icon/mpdhq.png"></image>
+            <view>卖品兑换券</view>
+          </navigator>
+        </view>
+        <view class="pending-item">
+          <navigator url='../../subPages/dydhq/dydhq' hover-class='none'>
+            <image class="mobile-icon" src="../../../assets/icon/dydhq.png"></image>
+            <view>电影兑换券</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
     <view class='order'>
       <view class='order-title other-item'>
         <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
           我的订单
         </navigator>
       </view>
-      <!-- <view class="order-type">
-        <view class="pending-item">
-          <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
-            <view class='iconfont icon-lianxikefu'></view>
-            <view>待付款</view> 
-          </navigator>
-        </view>
-        <view class="pending-item">
-          <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
-            <view class='iconfont icon-lianxikefu'></view>
-            <view>待出票</view> 
-          </navigator>
-        </view>
-        <view class="pending-item">
-          <navigator url='../../subPages/movie-order/movie-order' hover-class='none'>
-            <view class='iconfont icon-lianxikefu'></view>
-            <view>待收货</view> 
-          </navigator>
-        </view>
-      </view> -->
     </view>
     <view class='other'>
       <view class='customer other-item'>
         <button open-type='getPhoneNumber' bindgetphonenumber='bindgetphonenumber' class='btn' hover-class='none'>
-          <text class='iconfont icon-lianxikefu'></text> 绑定手机
+          <image class="mobile-icon" src="../../../assets/icon/aui-icon-mobile.png"></image>
+          绑定手机
         </button>
       </view>
       <view class='share other-item'>
