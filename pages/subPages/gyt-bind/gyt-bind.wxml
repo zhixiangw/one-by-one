@@ -1,0 +1,7 @@
+<view class="add-gyt-section">
+  <view class="ipt-box">
+    <input value="{{cardNo}}" bindinput="onCardNoInput" placeholder="请输入卡号" focus="{{true}}"></input>
+    <input password="{{true}}" bindinput="onPasswordInput" value="{{password}}" placeholder="请输入密码"></input>
+  </view>
+  <view class="btn" bindtap="onConfirm">添加</view>
+</view>

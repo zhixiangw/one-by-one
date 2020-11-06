@@ -1,0 +1,30 @@
+<view wx:if="{{cardList.length != 0}}" class="banner-section">
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}">
+		<block wx:for="{{cardList}}" wx:key="*this">
+			<swiper-item>
+				<view class="swiper-item">
+          <view class="card-item">{{item}}</view>
+        </view>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="rights">
+		权益
+	</view>
+	<view class="protocol">
+		<navigator url='../../subPages/gyt-bind/gyt-bind' hover-class='none'>
+			上海惠民观影通（权益型）协议
+			
+		</navigator>
+	</view>
+</view>
+
+<view wx:if="{{cardList.length == 0}}" class="empty">
+	<image class="gyt-empty" src="../../../assets/images/gyt-empty.png"></image>
+	<view class="desc">神马？我还没有观影通？</view>
+	<view class="go-bind">
+		<navigator url='../../subPages/gyt-bind/gyt-bind' hover-class='none'>
+			马上绑定
+		</navigator>
+	</view>
+</view>

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,8 +12,6 @@
 		"coverView": true,
 		"nodeModules": false,
 		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -21,7 +19,10 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.8.2",
@@ -52,103 +53,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": -1,
 			"list": [
-				{
-					"id": -1,
-					"name": "pages/subPages/cinema-detail/cinema-detail",
-					"pathName": "pages/subPages/cinema-detail/cinema-detail",
-					"query": "cinemaId=17004&movieId=360504&day=2019-09-13",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "pages/subPages/buy-ticket/buy-ticket",
-					"pathName": "pages/subPages/buy-ticket/buy-ticket",
-					"query": "pkg=%7B%22appId%22%3A%22wx2aee737c548bfbc9%22%2C%22timeStamp%22%3A%221576248518%22%2C%22nonceStr%22%3A%22PNW92D6kOZCKYZkD%22%2C%22package%22%3A%22prepay_id%3Dwx132248384663690df9340e191845521500%22%2C%22signType%22%3A%22MD5%22%2C%22paySign%22%3A%2282F3390AB2772843DBDC59B3042D84C9%22%2C%22timestamp%22%3A%221576248518%22%2C%22order_id%22%3A69%7D",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/subPages/movie-detail/movie-detail",
-					"pathName": "pages/subPages/movie-detail/movie-detail",
-					"query": "movieId=360504",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/subPages/cinema-detail/cinema-detail",
-					"pathName": "pages/subPages/cinema-detail/cinema-detail",
-					"query": "cinemaId=17004&movieId=1258394&day=2019-09-16",
-					"scene": null
-				},
-				{
-					"id": 4,
-					"name": "pages/subPages/seat-select/seat-select",
-					"pathName": "pages/subPages/seat-select/seat-select",
-					"query": "seqNo=202009200081791&cinemaId=234&movieId=1210778&day=2020-09-21",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "pages/subPages/search-page/search-page",
-					"pathName": "pages/subPages/search-page/search-page",
-					"query": "stype=2",
-					"scene": null
-				},
-				{
-					"id": 7,
-					"name": "授权中间页",
-					"pathName": "pages/subPages/authorize/authorize",
-					"query": "type=2",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "选择电影列表页面",
-					"pathName": "pages/subPages/select-cinema/select-cinema",
-					"query": "movieId=134&movieName=%E5%86%B3%E6%88%98%E4%B8%AD%E9%80%94%E5%B2%9B&showTime=2019-11-08",
-					"scene": null
-				},
-				{
-					"id": 8,
-					"name": "pages/subPages/movie-order/movie-order",
-					"pathName": "pages/subPages/movie-order/movie-order",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 9,
-					"name": "pages/subPages/select-cinema/select-cinema",
-					"pathName": "pages/subPages/select-cinema/select-cinema",
-					"query": "movieId=1163219&movieName=%E5%86%B3%E6%88%98%E4%B8%AD%E9%80%94%E5%B2%9B&showTime=2019-11-08",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/subPages/buy-ticket/buy-ticket",
-					"pathName": "pages/subPages/buy-ticket/buy-ticket",
-					"query": "movieId=1163219&movieName=%E5%86%B3%E6%88%98%E4%B8%AD%E9%80%94%E5%B2%9B&showTime=2019-11-08",
-					"scene": null
-				},
-				{
-					"id": 11,
-					"name": "pages/subPages/movie-order-detail/movie-order-detail",
-					"pathName": "pages/subPages/movie-order-detail/movie-order-detail",
-					"query": "orderId=59",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/subPages/about-page/about-page",
-					"pathName": "pages/subPages/about-page/about-page",
-					"query": "",
-					"scene": null
-				},
 				{
 					"id": -1,
 					"name": "pages/tabBar/user/user",
 					"pathName": "pages/tabBar/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/subPages/gyt/gyt",
+					"pathName": "pages/subPages/gyt/gyt",
 					"query": "",
 					"scene": null
 				}

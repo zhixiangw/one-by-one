@@ -1,0 +1,28 @@
+page {
+  background-color: #f4f4f4;
+}
+.ipt-box {
+  background-color: #fff;
+  margin: 30rpx 0;
+  padding-left: 30rpx;
+}
+.ipt-box input {
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+.ipt-box input:last-child {
+  border-bottom: none;
+}
+.btn {
+  width: 92%;
+  margin: 0 auto;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: #e54847;
+  font-size: 26rpx;
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 6rpx;
+}

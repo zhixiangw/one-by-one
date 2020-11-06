@@ -14,7 +14,9 @@
     "pages/subPages/movie-order/movie-order",
     "pages/subPages/seat-select/seat-select",
     "pages/subPages/authorize/authorize",
-    "pages/subPages/movie-order-detail/movie-order-detail"
+    "pages/subPages/movie-order-detail/movie-order-detail",
+    "pages/subPages/gyt/gyt",
+    "pages/subPages/gyt-bind/gyt-bind"
   ],
   "window": {
     "backgroundTextStyle": "light",
