@@ -3,11 +3,51 @@ Page({
   data:{
     order: {},
     pkg: {},
+    showPopup: { type: '', value: false },
+    selectedIndex: {
+      mpdhq: 0,
+      dydhq: 0,
+      hmgyt: 0,
+    }, // 默认选择第一张优惠券
+    couponList: [{
+      title: '爆米花',
+      subTitle: '万达电影院兑换券',
+      content: ['1、本券可免费兑换一份爆米花', '2、本券不适用其他门店', '3、本券长期效期'],
+      validDate: '2020-12-12'
+    }, {
+      title: '爆米花',
+      subTitle: '万达电影院兑换券',
+      content: ['1、本券可免费兑换一份爆米花', '2、本券不适用其他门店', '3、本券长期效期'],
+      validDate: '2020-12-12'
+    },{
+      title: '爆米花',
+      subTitle: '万达电影院兑换券',
+      content: ['1、本券可免费兑换一份爆米花', '2、本券不适用其他门店', '3、本券长期效期'],
+      validDate: '2020-12-12'
+    }, {
+      title: '爆米花',
+      subTitle: '万达电影院兑换券',
+      content: ['1、本券可免费兑换一份爆米花', '2、本券不适用其他门店', '3、本券长期效期'],
+      validDate: '2020-12-12'
+    }]
   },
   onLoad(params){
     this.setData({
-      pkg: JSON.parse(decodeURIComponent(params.pkg)) || {}
+      pkg: params.pkg ? JSON.parse(decodeURIComponent(params.pkg)) : {}
     }, this.getOrderDetail)
+  },
+  onCouponTap(e){
+    const { type } = e.currentTarget.dataset
+    this.setData({ showPopup: { type, value: true } })
+  },
+  onCouponItemTap(e){
+    const { index, type } = e.currentTarget.dataset
+    const { selectedIndex } = this.data
+    this.setData({ selectedIndex: { ...selectedIndex, [type]: index } })
+  },
+  onPopupClose(){
+    const { showPopup } = this.data
+    this.setData({ showPopup: { type: showPopup.type, value: false } })
   },
   payment(){
     const { pkg = {} } = this.data

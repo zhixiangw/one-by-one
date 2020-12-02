@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "订单确认"
+  "navigationBarTitleText": "订单确认",
+  "usingComponents": {
+    "mp-half-screen-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
+  }
 }

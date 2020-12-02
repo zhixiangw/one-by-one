@@ -1,82 +1,81 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": false,
-		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.8.2",
-	"appid": "wx2aee737c548bfbc9",
-	"projectname": "weapp-movie-master",
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/tabBar/user/user",
-					"pathName": "pages/tabBar/user/user",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "pages/subPages/gyt/gyt",
-					"pathName": "pages/subPages/gyt/gyt",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/subPages/mpdhq/mpdhq",
-					"pathName": "pages/subPages/mpdhq/mpdhq",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.8.2",
+  "appid": "wx2aee737c548bfbc9",
+  "projectname": "weapp-movie-master",
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/tabBar/user/user",
+          "pathName": "pages/tabBar/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "pages/subPages/gyt/gyt",
+          "pathName": "pages/subPages/gyt/gyt",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/subPages/mpdhq/mpdhq",
+          "pathName": "pages/subPages/mpdhq/mpdhq",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/subPages/buy-ticket/buy-ticket",
+          "pathName": "pages/subPages/buy-ticket/buy-ticket",
+          "scene": null
+        }
+      ]
+    }
+  }
 }
