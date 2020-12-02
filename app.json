@@ -16,7 +16,9 @@
     "pages/subPages/authorize/authorize",
     "pages/subPages/movie-order-detail/movie-order-detail",
     "pages/subPages/gyt/gyt",
-    "pages/subPages/gyt-bind/gyt-bind"
+    "pages/subPages/gyt-bind/gyt-bind",
+    "pages/subPages/mpdhq/mpdhq",
+    "pages/subPages/dydhq/dydhq"
   ],
   "window": {
     "backgroundTextStyle": "light",

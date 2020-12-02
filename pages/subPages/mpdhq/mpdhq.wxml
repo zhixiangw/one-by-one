@@ -1,0 +1,18 @@
+<view class="coupon-list">
+	<block wx:for="{{couponList}}" wx:key="*this">
+		<view class="coupon-item">
+			<view class="left">
+				<view class="title">{{item.title}}</view>
+				<view class="desc">兑换券</view>
+			</view>
+      <view class="dot"></view>
+			<view class="right">
+				<view class="sub-title">{{item.subTitle}}</view>
+				<block wx:for="{{item.content}}" wx:for-item="cnt" wx:key="index">
+					<view class="content">{{cnt}}</view>
+				</block>
+        <view class="valid-date">有效期至 {{item.validDate}}</view>
+			</view>
+		</view>
+	</block>
+</view>

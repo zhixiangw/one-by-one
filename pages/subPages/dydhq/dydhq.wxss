@@ -1,0 +1,5 @@
+.empty {
+  color: #666;
+  text-align: center;
+  margin-top: 300rpx;
+}
