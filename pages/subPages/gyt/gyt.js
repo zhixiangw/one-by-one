@@ -1,17 +1,43 @@
-// pages/subPages/gyt.js
+const Api = require('../../../utils/request.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-    cardList: [1,2,3]
+    isMember: false,
+    isLoading: true,
+    cardInfo: {
+      cards: [],
+      rights: [],
+      agreement: [],
+    },
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    const _this = this
+    wx.showLoading({
+      title: '正在加载...',
+    })
+    Api.request({
+      url: '/userCenter',
+      success(res) {
+        const isMember = Boolean(res.data.is_vip)
+        _this.setData({ isMember, isLoading: false })
+        if (isMember) {
+          _this.queryMemberInfo()
+        } else {
+          wx.hideLoading()
+        }
+      }
+    })
   },
+  queryMemberInfo: function() {
+    const _this = this
+    Api.request({
+      url: '/member',
+      success(res) {
+        wx.hideLoading()
+        const cardInfo = res.data
+        _this.setData({ cardInfo })
+        console.log(cardInfo)
+      }
+    })
+  }
 })

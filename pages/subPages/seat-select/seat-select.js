@@ -306,21 +306,53 @@ Page({
     })
   },
   submit() {
-    const { orderInfo, selectSeatList, seqNo } = this.data
-    const seats = {
+    const { selectSeatList, seqNo } = this.data
+    const orderSeats = {
       count: selectSeatList.length,
       list: selectSeatList.map(v => ({ seatNo: v.cineSeatId, seatName: v.seatInfo, row: v.y, column: v.x }))
     }
     Api.request({
-      url: '/createOrder',
+      url: '/orderConfirm',
       method: 'POST',
       data: {
         seqNo,
-        seats: JSON.stringify(seats)
+        seats: JSON.stringify(orderSeats)
       },
       success: (res) => {
+        const {
+          hall,
+          show_time,
+          seats = [],
+          show_price,
+          movie_img = '',
+          movie_name = '',
+          ver = '',
+          lang = '',
+          cinema_name = '',
+          phone,
+          discount_price,
+          movies_vouchers = [],
+          snacks_vouchers = [],
+          vipCard = []
+        } = res.data
+
+        const orderInfo = encodeURIComponent(JSON.stringify({
+          seqNo,
+          orderSeats,
+          movieImg: movie_img,
+          movieName: movie_name,
+          time: show_time,
+          lang: `${lang}${ver}`,
+          cinemaName: cinema_name,
+          hall,
+          phone,
+          price: show_price,
+          salePrice: discount_price,
+          seat: seats.join('')
+        }))
+        wx.setStorageSync('order_confirm', JSON.stringify({ movies_vouchers, snacks_vouchers, vipCard }))
         wx.navigateTo({
-          url: `/pages/subPages/buy-ticket/buy-ticket?pkg=${encodeURIComponent(JSON.stringify(res.data))}`,
+          url: `/pages/subPages/buy-ticket/buy-ticket?orderInfo=${orderInfo}`,
         })
       }
     })

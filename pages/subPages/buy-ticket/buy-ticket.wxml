@@ -23,15 +23,15 @@
   <view class='section coupon-section'>
     <view class='section-title' bindtap="onCouponTap" data-type="mpdhq">
       <view>买品兑换券</view>
-      <view class="title-desc">无可用</view>
+      <view class="title-desc">{{snacks_vouchers.length ? '已使用' : '无可用'}}</view>
     </view>
     <view class='section-title' bindtap="onCouponTap" data-type="dydhq">
       <view>电影兑换券</view>
-      <view class="title-desc">无可用</view>
+      <view class="title-desc">{{movies_vouchers.length ? '已使用' : '无可用'}}</view>
     </view>
     <view class='section-title' bindtap="onCouponTap" data-type="hmgyt">
       <view>惠民观影卡</view>
-      <view class="title-desc">去使用</view>
+      <view class="title-desc">{{vipCard.length ? '已使用' : '无可用'}}</view>
     </view>
   </view>
   <view class='section'>
@@ -51,7 +51,7 @@
   </view>
   <view class='footer'>
     <view class='payment'>还需支付：
-      <text class='price-num'>{{order.totalMoney}}<text class='yuan'>元</text></text>
+      <text class='price-num'>{{totalMoney}}<text class='yuan'>元</text></text>
     </view>
     <view class='payment-btn' bindtap='payment'>确认支付</view>
   </view>
@@ -61,26 +61,26 @@
   <view slot="footer">
     <view class="pop-header">
       <view class="pop-title">兑换券</view>
-      <view class="operator">添加兑换券</view>
+      <!-- <view class="operator">添加兑换券</view> -->
     </view>
     <scroll-view scroll-y="true" style="max-height: 660rpx;">
       <view class="coupon-list">
-        <block wx:for="{{couponList}}" wx:key="index">
-          <view class="card-item" bindtap="onCouponItemTap" data-index="{{index}}" data-type="mpdhq">
+        <block wx:for="{{snacks_vouchers}}" wx:key="index">
+          <view class="card-item" bindtap="onCouponItemTap" data-index="{{index}}" data-id="{{item.id}}" data-type="mpdhq">
             <icon type="{{selectedIndex.mpdhq == index ? 'success' : 'circle'}}" size="23"></icon>
             <view class="popup-content">
               <view class="coupon-item">
                 <view class="left">
-                  <view class="title">{{item.title}}</view>
+                  <view class="title">{{item.title || '卖品'}}</view>
                   <view class="desc">兑换券</view>
                 </view>
                 <view class="dot"></view>
                 <view class="right">
-                  <view class="sub-title">{{item.subTitle}}</view>
-                  <block wx:for="{{item.content}}" wx:for-item="cnt" wx:key="index">
+                  <view class="sub-title">{{item.name}}</view>
+                  <block wx:for="{{item.desc}}" wx:for-item="cnt" wx:key="index">
                     <view class="content">{{cnt}}</view>
                   </block>
-                  <view class="valid-date">有效期至 {{item.validDate}}</view>
+                  <view class="valid-date">有效期至 {{item.expire_date}}</view>
                 </view>
               </view>
             </view>
@@ -95,26 +95,26 @@
   <view slot="footer">
     <view class="pop-header">
       <view class="pop-title">兑换券</view>
-      <view class="operator">添加兑换券</view>
+      <!-- <view class="operator">添加兑换券</view> -->
     </view>
     <scroll-view scroll-y="true" style="max-height: 660rpx;">
       <view class="coupon-list">
-        <block wx:for="{{couponList}}" wx:key="index">
-          <view class="card-item" bindtap="onCouponItemTap" data-index="{{index}}" data-type="dydhq">
+        <block wx:for="{{movies_vouchers}}" wx:key="index">
+          <view class="card-item" bindtap="onCouponItemTap" data-index="{{index}}" data-id="{{item.id}}" data-type="dydhq">
             <icon type="{{selectedIndex.dydhq == index ? 'success' : 'circle'}}" size="23"></icon>
             <view class="popup-content">
               <view class="coupon-item">
                 <view class="left">
-                  <view class="title">{{item.title}}</view>
+                  <view class="title">{{item.title || '电影'}}</view>
                   <view class="desc">兑换券</view>
                 </view>
                 <view class="dot"></view>
                 <view class="right">
-                  <view class="sub-title">{{item.subTitle}}</view>
-                  <block wx:for="{{item.content}}" wx:for-item="cnt" wx:key="index">
+                  <view class="sub-title">{{item.name}}</view>
+                  <block wx:for="{{item.desc}}" wx:for-item="cnt" wx:key="index">
                     <view class="content">{{cnt}}</view>
                   </block>
-                  <view class="valid-date">有效期至 {{item.validDate}}</view>
+                  <view class="valid-date">有效期至 {{item.expire_date}}</view>
                 </view>
               </view>
             </view>
@@ -129,13 +129,13 @@
 <mp-half-screen-dialog bind:close="onPopupClose" extClass="popup-daliog" show="{{showPopup.type == 'hmgyt' && showPopup.value}}" title="惠民观影卡">
   <view slot="footer">
     <view class="pop-header">
-      <view class="pop-title"></view>
-      <view class="operator">添加观影卡</view>
+      <view class="pop-title">观影卡</view>
+      <view class="operator" bind:tap="onAddCard">添加观影卡</view>
     </view>
     <scroll-view scroll-y="true" style="max-height: 660rpx;">
       <view class="coupon-list">
-        <block wx:for="{{couponList}}" wx:key="index">
-          <view class="card-item" bindtap="onCouponItemTap" data-index="{{index}}" data-type="hmgyt">
+        <block wx:for="{{vipCard}}" wx:key="index">
+          <view class="card-item" bindtap="onCouponItemTap" data-index="{{index}}" data-id="{{item.id}}" data-type="hmgyt">
             <icon type="{{selectedIndex.hmgyt == index ? 'success' : 'circle'}}" size="23"></icon>
             <view class="popup-content">
               <view class="coupon-item">

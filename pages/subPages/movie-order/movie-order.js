@@ -1,6 +1,6 @@
 const Api = require('../../../utils/request.js')
 Page({
-  data:{ 
+  data:{
     orderList:[]
   },
   onLoad(){
@@ -11,7 +11,7 @@ Page({
   initData(){
     const _this = this;
     Api.request({
-      url: `/orderList?type=[1,2,3,4,5]`,
+      url: `/orderList?type=[1,2,4,5]`,
       success(res) {
         const { items } = res.data
         _this.setData({

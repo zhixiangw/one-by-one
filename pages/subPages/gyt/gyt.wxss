@@ -1,34 +1,102 @@
 page {
   background-color: #f4f4f4;
 }
+
 swiper {
   height: 560rpx;
   margin-bottom: 40rpx;
 }
+
 .swiper-item {
   padding-top: 100rpx;
   height: 300rpx;
   background-color: darkgoldenrod;
 }
+
 .card-item {
+  display: flex;
+  flex-direction: column;
   width: 85%;
   box-sizing: border-box;
   height: 400rpx;
   padding-top: 20rpx;
-  background: #fff;
+  background: #ff0995;
+  color: #fff;
   margin: 0 auto;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
   border-radius: 12rpx;
-  box-shadow: 0 2px 17px 0 #EFF2F9;
+  box-shadow: 0 2px 17px 0 #ff0995;
 }
 
-.rights, .protocol {
+.card-item .header {
+  color: #fff;
+}
+
+.card-item .body {
+  display: flex;
+  flex: 1;
+  font-size: 45rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-item .footer {
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rights {
+  display: flex;
+}
+
+.rights-box .main-title {
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+}
+
+.rights .right-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10rpx;
+}
+
+.rights .right-item .right-icon {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 15rpx;
+}
+
+.rights .right-item .right-title {
+  font-size: 24rpx;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.rights .right-item .right-desc {
+  font-size: 22rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #999;
+  text-align: center;
+}
+
+.rights-box,
+.protocol {
   width: 90%;
   margin: 0 auto;
   border-radius: 12rpx;
   background-color: #fff;
   padding: 40rpx 30rpx;
   box-sizing: border-box;
-  box-shadow: 0 2px 17px 0 #EFF2F9;
+  box-shadow: 0 2px 17px 0 #eff2f9;
 }
 
 .protocol {
@@ -39,8 +107,6 @@ swiper {
   align-items: center;
   justify-content: space-between;
 }
-
-
 
 .empty {
   position: absolute;

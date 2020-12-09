@@ -1,4 +1,4 @@
-// pages/subPages/gyt-bind/gyt-bind.js
+const Api = require('../../../utils/request.js')
 Page({
 
   /**
@@ -24,7 +24,22 @@ Page({
       return null;
     }
     // 接口请求
-    console.log(cardNo, password)
+    const _this = this
+    wx.showLoading({
+      title: '正在加载...',
+    })
+    Api.request({
+      url: '/bindMemberVoucher',
+      method: 'POST',
+      data: {
+        no: cardNo,
+        secret: password
+      },
+      success() {
+        wx.hideLoading()
+        _this.backToList()
+      }
+    })
   },
   backToList: function() {
     wx.showToast({ title: '添加成功' })

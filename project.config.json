@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "postcss": true,
     "minified": true,
@@ -26,9 +26,11 @@
     "useIsolateContext": true,
     "useCompilerModule": false,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "bundle": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.8.2",
@@ -73,6 +75,24 @@
         {
           "name": "pages/subPages/buy-ticket/buy-ticket",
           "pathName": "pages/subPages/buy-ticket/buy-ticket",
+          "query": "orderInfo=%7B%22orderSeats%22%3A%7B%22count%22%3A0%2C%22list%22%3A%5B%5D%7D%2C%22movieImg%22%3A%22http%3A%2F%2Fp0.meituan.net%2F177.249%2Fmovie%2Fb4d50f4b69e332c77264994e2d584fb44053452.jpg%22%2C%22movieName%22%3A%22%E9%99%A4%E6%9A%B4%22%2C%22time%22%3A%222020-11-19%2015%3A45%3A00%22%2C%22lang%22%3A%22%E7%B2%A4%E8%AF%AD%2C%E5%9B%BD%E8%AF%AD2D%22%2C%22cinemaName%22%3A%22%E4%B8%8A%E6%B5%B7SFC%E5%BD%B1%E5%9F%8E%22%2C%22hall%22%3A%223%E5%8F%B7%E6%BF%80%E5%85%89%E5%8E%85%EF%BC%88%E9%9C%80%E4%BD%A9%E6%88%B4%E5%8F%A3%E7%BD%A9%E5%85%A5%E5%9C%BA%EF%BC%89%22%2C%22phone%22%3A%2217621256246%22%2C%22price%22%3A34%2C%22salePrice%22%3A%2228.9%22%2C%22seat%22%3A%223%E6%8E%925%E5%BA%A7%22%7D",
+          "scene": null
+        },
+        {
+          "name": "pages/subPages/seat-select/seat-select",
+          "pathName": "pages/subPages/seat-select/seat-select",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/subPages/dydhq/dydhq",
+          "pathName": "pages/subPages/dydhq/dydhq",
+          "query": "orderInfo=%7B%22orderSeats%22%3A%7B%22count%22%3A0%2C%22list%22%3A%5B%5D%7D%2C%22movieImg%22%3A%22http%3A%2F%2Fp0.meituan.net%2F177.249%2Fmovie%2Fb4d50f4b69e332c77264994e2d584fb44053452.jpg%22%2C%22movieName%22%3A%22%E9%99%A4%E6%9A%B4%22%2C%22time%22%3A%222020-11-19%2015%3A45%3A00%22%2C%22lang%22%3A%22%E7%B2%A4%E8%AF%AD%2C%E5%9B%BD%E8%AF%AD2D%22%2C%22cinemaName%22%3A%22%E4%B8%8A%E6%B5%B7SFC%E5%BD%B1%E5%9F%8E%22%2C%22hall%22%3A%223%E5%8F%B7%E6%BF%80%E5%85%89%E5%8E%85%EF%BC%88%E9%9C%80%E4%BD%A9%E6%88%B4%E5%8F%A3%E7%BD%A9%E5%85%A5%E5%9C%BA%EF%BC%89%22%2C%22phone%22%3A%2217621256246%22%2C%22price%22%3A34%2C%22salePrice%22%3A%2228.9%22%2C%22seat%22%3A%223%E6%8E%925%E5%BA%A7%22%7D",
+          "scene": null
+        },
+        {
+          "name": "pages/subPages/gyt-bind/gyt-bind",
+          "pathName": "pages/subPages/gyt-bind/gyt-bind",
           "scene": null
         }
       ]

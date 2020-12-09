@@ -1,1 +1,19 @@
-<view class="empty">暂无电影兑换券~</view>
+<view wx:if="{{isEmpty}}" class="empty">暂无电影兑换券~</view>
+<view class="coupon-list">
+	<block wx:for="{{list}}" wx:key="*this">
+		<view class="coupon-item">
+			<view class="left">
+				<view class="title">电影票</view>
+				<view class="desc">兑换券</view>
+			</view>
+      <view class="dot"></view>
+			<view class="right">
+				<view class="sub-title">{{item.name}}</view>
+				<block wx:for="{{item.desc}}" wx:for-item="cnt" wx:key="index">
+					<view class="content">{{cnt}}</view>
+				</block>
+        <view class="valid-date">有效期至 {{item.expire_date}}</view>
+			</view>
+		</view>
+	</block>
+</view>
