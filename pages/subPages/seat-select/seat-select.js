@@ -339,7 +339,7 @@ Page({
         const orderInfo = encodeURIComponent(JSON.stringify({
           seqNo,
           orderSeats,
-          movieImg: movie_img,
+          movieImg: movie_img.replace('w.h', ''),
           movieName: movie_name,
           time: show_time,
           lang: `${lang}${ver}`,

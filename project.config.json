@@ -75,13 +75,13 @@
         {
           "name": "pages/subPages/buy-ticket/buy-ticket",
           "pathName": "pages/subPages/buy-ticket/buy-ticket",
-          "query": "orderInfo=%7B%22orderSeats%22%3A%7B%22count%22%3A0%2C%22list%22%3A%5B%5D%7D%2C%22movieImg%22%3A%22http%3A%2F%2Fp0.meituan.net%2F177.249%2Fmovie%2Fb4d50f4b69e332c77264994e2d584fb44053452.jpg%22%2C%22movieName%22%3A%22%E9%99%A4%E6%9A%B4%22%2C%22time%22%3A%222020-11-19%2015%3A45%3A00%22%2C%22lang%22%3A%22%E7%B2%A4%E8%AF%AD%2C%E5%9B%BD%E8%AF%AD2D%22%2C%22cinemaName%22%3A%22%E4%B8%8A%E6%B5%B7SFC%E5%BD%B1%E5%9F%8E%22%2C%22hall%22%3A%223%E5%8F%B7%E6%BF%80%E5%85%89%E5%8E%85%EF%BC%88%E9%9C%80%E4%BD%A9%E6%88%B4%E5%8F%A3%E7%BD%A9%E5%85%A5%E5%9C%BA%EF%BC%89%22%2C%22phone%22%3A%2217621256246%22%2C%22price%22%3A34%2C%22salePrice%22%3A%2228.9%22%2C%22seat%22%3A%223%E6%8E%925%E5%BA%A7%22%7D",
+          "query": "orderInfo=%7B%22seqNo%22%3A%22202012090021727%22%2C%22orderSeats%22%3A%7B%22count%22%3A1%2C%22list%22%3A%5B%7B%22seatNo%22%3A%221421%22%2C%22seatName%22%3A%228%E6%8E%925%E5%BA%A7%22%2C%22row%22%3A%228%22%2C%22column%22%3A%225%22%7D%5D%7D%2C%22movieImg%22%3A%22http%3A%2F%2Fp1.meituan.net%2F%2Fmoviemachine%2F6fb1855f663f9856bfc47b7d013e0474651230.jpg%22%2C%22movieName%22%3A%22%E7%96%AF%E7%8B%82%E5%8E%9F%E5%A7%8B%E4%BA%BA2%22%2C%22time%22%3A%222020-12-09%2020%3A35%3A00%22%2C%22lang%22%3A%22%E8%8B%B1%E8%AF%AD2D%2F3D%2FIMAX%203D%2F%E4%B8%AD%E5%9B%BD%E5%B7%A8%E5%B9%952D%2F%E4%B8%AD%E5%9B%BD%E5%B7%A8%E5%B9%953D%2FCINITY%202D%2FCINITY%203D%2F%E6%9D%9C%E6%AF%94%E5%BD%B1%E9%99%A2%202D%2F%E6%9D%9C%E6%AF%94%E5%BD%B1%E9%99%A2%203D%22%2C%22cinemaName%22%3A%22%E6%AF%94%E9%AB%98%E7%94%B5%E5%BD%B1%E5%9F%8E%EF%BC%88%E5%8F%A4%E5%8C%97%E5%BA%97%EF%BC%89%22%2C%22hall%22%3A%228%E5%8F%B7%E5%8E%85%EF%BC%88%E5%8F%AF%E5%85%8D%E8%B4%B9%E5%81%9C%E8%BD%A6%EF%BC%8C3D%E7%9C%BC%E9%95%9C%E5%85%8D%E8%B4%B9%E7%A7%9F%E5%80%9F%EF%BC%89%22%2C%22phone%22%3A%2217621256246%22%2C%22price%22%3A30%2C%22salePrice%22%3A%2225.5%22%2C%22seat%22%3A%228%E6%8E%925%E5%BA%A7%22%7D",
           "scene": null
         },
         {
           "name": "pages/subPages/seat-select/seat-select",
           "pathName": "pages/subPages/seat-select/seat-select",
-          "query": "",
+          "query": "seqNo=202012090021727&cinemaId=23674&movieId=247294&day=2020-12-10",
           "scene": null
         },
         {
@@ -93,6 +93,7 @@
         {
           "name": "pages/subPages/gyt-bind/gyt-bind",
           "pathName": "pages/subPages/gyt-bind/gyt-bind",
+          "query": "",
           "scene": null
         }
       ]

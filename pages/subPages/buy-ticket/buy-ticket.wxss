@@ -46,6 +46,7 @@
 }
 .movie-box .movie-poster{
   width: 214rpx;
+  min-width: 214rpx;
   height: 300rpx;
   background-size: cover;
   background-repeat: no-repeat;

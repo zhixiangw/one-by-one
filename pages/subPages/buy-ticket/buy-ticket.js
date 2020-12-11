@@ -78,7 +78,7 @@ Page({
       method: 'POST',
       data: {
         seqNo: order.seqNo,
-        seats: order.orderSeats,
+        seats: JSON.stringify(order.orderSeats),
         userPhone: order.phone,
         voucherId: voucher.id ? String(voucher.id) : null,
         snacksId: snacks.id ? String(snacks.id) : null
