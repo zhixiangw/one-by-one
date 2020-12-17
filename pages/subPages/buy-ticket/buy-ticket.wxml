@@ -10,8 +10,8 @@
           <view>{{order.hall}}</view>
         </view>
         <view class="price-box">
-          <view class="vip-price">补贴价：<text class="price-num">{{order.salePrice}}元</text></view>
-          <view>市场价：<text class="price-num">{{order.price}}元</text></view>
+          <view class="vip-price">补贴价：<text class="price-num">{{order.vip_amount}}元</text></view>
+          <view>市场价：<text class="price-num">{{order.show_amount}}元</text></view>
         </view>
       </view>
     </view>
@@ -21,17 +21,17 @@
     </view>
   </view>
   <view class='section coupon-section'>
-    <view class='section-title' bindtap="onCouponTap" data-type="mpdhq">
-      <view>买品兑换券</view>
-      <view class="title-desc">{{snacks_vouchers.length ? '已使用' : '无可用'}}</view>
+    <view class='section-title' bindtap="onCouponTap" data-type="hmgyt">
+      <view>惠民观影卡</view>
+      <view class="title-desc">{{selectedDesc.hmgyt}}</view>
     </view>
     <view class='section-title' bindtap="onCouponTap" data-type="dydhq">
       <view>电影兑换券</view>
-      <view class="title-desc">{{movies_vouchers.length ? '已使用' : '无可用'}}</view>
+      <view class="title-desc">{{selectedDesc.dydhq}}</view>
     </view>
-    <view class='section-title' bindtap="onCouponTap" data-type="hmgyt">
-      <view>惠民观影卡</view>
-      <view class="title-desc">{{vipCard.length ? '已使用' : '无可用'}}</view>
+    <view class='section-title' bindtap="onCouponTap" data-type="mpdhq">
+      <view>买品兑换券</view>
+      <view class="title-desc">{{selectedDesc.mpdhq}}</view>
     </view>
   </view>
   <view class='section'>

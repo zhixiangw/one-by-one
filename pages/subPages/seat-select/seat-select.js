@@ -323,14 +323,15 @@ Page({
           hall,
           show_time,
           seats = [],
-          show_price,
           movie_img = '',
           movie_name = '',
           ver = '',
           lang = '',
           cinema_name = '',
           phone,
-          discount_price,
+          show_amount,
+          vip_amount,
+          voucher_amount,
           movies_vouchers = [],
           snacks_vouchers = [],
           vipCard = []
@@ -346,8 +347,9 @@ Page({
           cinemaName: cinema_name,
           hall,
           phone,
-          price: show_price,
-          salePrice: discount_price,
+          show_amount,
+          vip_amount,
+          voucher_amount,
           seat: seats.join('')
         }))
         wx.setStorageSync('order_confirm', JSON.stringify({ movies_vouchers, snacks_vouchers, vipCard }))

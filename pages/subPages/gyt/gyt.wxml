@@ -17,26 +17,26 @@
 			</swiper-item>
 		</block>
 	</swiper>
-	<view class="rights-box">
-		<view class="main-title">权益型卡四大权益</view>
-		<view class="rights">
-			<block wx:for="{{cardInfo.rights}}" wx:key="index">
-				<view class="right-item">
-					<!-- <image class="right-icon" src="{{item.icon}}" /> -->
-					<image class="right-icon" src="../../../assets/images/order_store.png" />
-					<view class="right-title">{{item.name}}</view>
-					<view class="right-desc">{{item.text}}</view>
-				</view>
-			</block>
-		</view>
-	</view>
-	<view class="protocol">
-		<block wx:for="{{cardInfo.agreement}}" wx:key="index">
-			<navigator url='' hover-class='none'>
-				{{item.name}}
-			</navigator>
+</view>
+<view class="rights-box">
+	<view class="main-title">权益型卡四大权益</view>
+	<view class="rights">
+		<block wx:for="{{cardInfo.rights}}" wx:key="index">
+			<view class="right-item">
+				<!-- <image class="right-icon" src="{{item.icon}}" /> -->
+				<image class="right-icon" src="../../../assets/images/order_store.png" />
+				<view class="right-title">{{item.name}}</view>
+				<view class="right-desc">{{item.text}}</view>
+			</view>
 		</block>
 	</view>
+</view>
+<view class="protocol">
+	<block wx:for="{{cardInfo.agreement}}" wx:key="index">
+		<navigator url='' hover-class='none'>
+			{{item.name}}
+		</navigator>
+	</block>
 </view>
 
 <view wx:if="{{!isMember && !isLoading}}" class="empty">

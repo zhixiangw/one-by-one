@@ -36,7 +36,6 @@ Page({
         wx.hideLoading()
         const cardInfo = res.data
         _this.setData({ cardInfo })
-        console.log(cardInfo)
       }
     })
   }
