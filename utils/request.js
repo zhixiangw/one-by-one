@@ -1,6 +1,6 @@
 // const baseUrl = 'https://openapi.wanguo.press/openapi'
-const baseUrl = 'https://test-app.wanguo.press/openapi'
-// const baseUrl = 'http://127.0.0.1:7001/openapi'
+// const baseUrl = 'https://test-app.wanguo.press/openapi'
+const baseUrl = 'http://127.0.0.1:7001/openapi'
 const ApiReqest = (config) => {
   wx.request({
     url: `${baseUrl}${config.url}`,

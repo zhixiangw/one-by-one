@@ -1,6 +1,6 @@
 <template name="cinemaSection">
   <navigator class='cinema-section' url='/pages/subPages/cinema-detail/cinema-detail?cinemaId={{cinema.id}}&movieId={{movieId}}&day={{day}}' hover-class="none">
-    <view class='name-price line-ellipsis'>{{cinema.nm}}</view>
+    <view class='name-price line-ellipsis'>{{cinema.name}}</view>
     <view class='address'>
       <text class='line-ellipsis'>{{cinema.addr}}</text>
       <text class='distance'>{{cinema.distance}}</text>

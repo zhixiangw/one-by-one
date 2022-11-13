@@ -47,5 +47,5 @@
       <view class='synopsis'>{{detailMovie.dra}}</view>
     </view>
   </view>
-  <navigator hover-class='none' url='/pages/subPages/select-cinema/select-cinema?movieId={{detailMovie.movie_id}}&movieName={{detailMovie.nm}}&showTime={{detailMovie.rt}}' wx:if='{{detailMovie.onSale}}' class='purchase'>特惠购票</navigator>
+  <navigator hover-class='none' url='/pages/subPages/select-cinema/select-cinema?movieId={{detailMovie.movie_id}}&movieName={{detailMovie.nm}}&showTime={{detailMovie.rt}}&showDate={{detailMovie.rt}}' wx:if='{{detailMovie.onSale}}' class='purchase'>特惠购票</navigator>
 </view>

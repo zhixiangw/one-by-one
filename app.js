@@ -1,4 +1,4 @@
-const citys = [{ "id": 10, "nm": "上海", "py": "shanghai" }]
+const citys = [{ "id": 1, "nm": "上海", "py": "shanghai" }]
 const QQMapWX = require('./assets/libs/qqmap-wx-jssdk.min.js');
 
 let qqmapsdk;
@@ -52,7 +52,7 @@ App({
               latitude,
               longitude,
               cityName: '上海',
-              cityId: 10,
+              cityId: 1,
               status: 1
             }
             this.globalData.userLocation = { ...cityInfo}   //浅拷贝对象

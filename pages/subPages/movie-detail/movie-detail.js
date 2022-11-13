@@ -48,8 +48,6 @@ Page({
     obj.version = obj.version && obj.version.split(' ').map(item=>{
       return item.toUpperCase().replace('V','')
     })
-    //处理媒体库的图片
-    obj.photos = obj.photos.map(item => item.split('@')[0].replace('w.h/', '') +'@180w_140h_1e_1c')
     return obj
   }
 })

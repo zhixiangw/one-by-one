@@ -17,6 +17,7 @@ Page({
   },
   //初始化页面
   initPage(query) {
+    //cinemaId=&movieId=1428928&day=2022-10-16
     const { cinemaId = '', movieId = '', day = '' } = query
     this.setData({
       cinemaId,
@@ -56,7 +57,8 @@ Page({
     this.setData({
       movie,
       days,
-      timeList: this.createEndTime(movie.shows[0].plist, movie.dur)
+      timeList: movie.shows[0].plist
+      // timeList: this.createEndTime(movie.shows[0].plist, movie.dur)
     })
   },
   //选择时间
@@ -65,13 +67,15 @@ Page({
     const movie = this.data.movie
     const index = movie.shows.findIndex(item => item.showDate === day)
     this.setData({
-      timeList: this.createEndTime(movie.shows[index].plist, movie.dur)
+      // timeList: this.createEndTime(movie.shows[index].plist, movie.dur)
+      timeList: movie.shows[index].plist
     })
   },
   //购票
   buyTicket(e){
     const movie = this.data.movie;
     const info = e.currentTarget.dataset.info;
+    console.log(info)
     wx.navigateTo({
       url: `/pages/subPages/seat-select/seat-select?seqNo=${info.seqNo}&cinemaId=${this.data.cinemaId}&movieId=${this.data.movieId}&day=${this.data.day}`,
     })

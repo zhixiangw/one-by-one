@@ -191,7 +191,7 @@ Page({
         wx.hideLoading()
         _this.setData({
           mostExpectedList: mostExpectedList.concat(_this.formatImgUrl(res.data.coming, true)),
-          loadComplete2: !res.data.paging.hasMore || !res.data.coming.length //当返回的数组长度为0时也认为数据请求完毕
+          loadComplete2: !res.data.coming.length //当返回的数组长度为0时也认为数据请求完毕
         })
       }
     })
@@ -205,9 +205,9 @@ Page({
     let newArr = []
     arr.forEach(item => {
       let title = item.comingTitle
-      if (cutTitle) {
-        title = item.comingTitle.split(' ')[0]
-      }
+      // if (cutTitle) {
+      //   title = item.comingTitle.split(' ')[0]
+      // }
       let imgUrl = item.img.replace('w.h', '128.180')
       newArr.push({ ...item,
         comingTitle: title,

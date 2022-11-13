@@ -24,26 +24,30 @@ Page({
     orderInfo: {},
     cinemaId: "",
     movieId: "",
-    day: ""
+    day: "",
+    showId: "",
+    cinemaName: ""
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * seqNo=1068254677&cinemaId=8091&movieId=1428928&day=2022-10-16
+   * 生命周期函数--监听页面加载 
    */
-  onLoad: function ({ seqNo, cinemaId, movieId, day }) {
+  onLoad: function ({ seqNo: showId, cinemaId, movieId, day,cinemaName }) {
     wx.showLoading({
       title: '正在加载...',
     })
-    this.setData({ seqNo, cinemaId, movieId, day }, this.init)
+    this.setData({ showId, cinemaId, movieId, day,cinemaName }, this.init)
   },
-
+  // seqNo=1067997357&cinemaId=14101&movieId=1436719&day=2022-10-17
+  // seqNo=1067997354&cinemaId=14101&movieId=1428928&day=2022-10-18
   init: function () {
-    const { seqNo }  = this.data
+    const { showId }  = this.data
     Api.request({
-      url: '/seatingPlan',
-      method: 'POST',
+      url: '/seatList',
+      method: 'get',
       data: {
-        seqNo
+        showId
       },
       success: (res) => {
         wx.hideLoading()
@@ -75,23 +79,23 @@ Page({
 
           }
         } else {
-          const { cinema, hall, movie, price, show, seat } = res.data.seatData
+          const { show, film, seatList } = res.data
           this.setData({
             orderInfo: {
-              cinemaId: cinema.cinemaId,
-              movieId: cinema.movieId,
+              cinemaId: this.data.cinemaId,
+              movieId: this.data.movieId,
             },
-            cinemaName: cinema.cinemaName,
-            cinemaId: cinema.cinemaId,
-            hallName: hall.hallName,
-            movieName: movie.movieName,
-            lang: `${show.lang}${show.dim}`,
+            cinemaName: this.data.cinemaName,
+            cinemaId: this.data.cinemaId,
+            hallName: show.hallName,
+            movieName: film.nm,
+            lang: `${show.lang}${show.versionType}`,
             time: `${show.showDate} ${show.showTime}`,
-            title: `${show.showDate} ${show.showTime} ${show.lang}${show.dim}`,
-            price: price[Object.keys(price)[0]].seatsPrice[1].totalPrice,
-            seats: this.formatSeatRow(seat.regions[0].rows)
+            title: `${show.showDate} ${show.showTime} ${show.lang}${show.versionType}`,
+            price: show.netPrice,
+            seats: seatList
           }, this.drawSeats)
-          wx.setNavigationBarTitle({ title: movie.movieName })
+          wx.setNavigationBarTitle({ title: film.nm })
         }
       }
     })
@@ -306,7 +310,7 @@ Page({
     })
   },
   submit() {
-    const { selectSeatList, seqNo } = this.data
+    const { selectSeatList, showId } = this.data
     const orderSeats = {
       count: selectSeatList.length,
       list: selectSeatList.map(v => ({ seatNo: v.cineSeatId, seatName: v.seatInfo, row: v.y, column: v.x }))
@@ -315,7 +319,7 @@ Page({
       url: '/orderConfirm',
       method: 'POST',
       data: {
-        seqNo,
+        showId,
         seats: JSON.stringify(orderSeats)
       },
       success: (res) => {
@@ -338,7 +342,7 @@ Page({
         } = res.data
 
         const orderInfo = encodeURIComponent(JSON.stringify({
-          seqNo,
+          showId,
           orderSeats,
           movieImg: movie_img.replace('w.h', ''),
           movieName: movie_name,

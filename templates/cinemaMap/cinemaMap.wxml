@@ -1,7 +1,5 @@
 <template name="cinemaMap">
-  <navigator 
-    url='/pages/subPages/cinema-map/cinema-map?latitude={{cinemaData.lat}}&longitude={{cinemaData.lng}}&nm={{cinemaData.nm}}&addr={{cinemaData.addr}}'              class='location-icon' 
-    hover-class='none'>
+  <navigator url='/pages/subPages/cinema-map/cinema-map?latitude={{cinemaData.lat}}&longitude={{cinemaData.lng}}&nm={{cinemaData.name}}&addr={{cinemaData.addr}}' class='location-icon' hover-class='none'>
     <view class='cinema-info'>
       <image src='/assets/images/location.png' mode='aspectFit'></image>
       <view class='location'>{{cinemaData.addr}}</view>
