@@ -37,7 +37,7 @@ Page({
       success(res) {
         wx.hideLoading()
         _this.setData({
-          cinemaDetail: res.data,
+          cinemaDetail: res.data.cinemaData,
           movies: _this.formatMovie(res.data.showData.movies),
         })
         wx.setNavigationBarTitle({ title: res.data.cinemaData.nm })
@@ -75,7 +75,6 @@ Page({
   buyTicket(e){
     const movie = this.data.movie;
     const info = e.currentTarget.dataset.info;
-    console.log(info)
     wx.navigateTo({
       url: `/pages/subPages/seat-select/seat-select?seqNo=${info.seqNo}&cinemaId=${this.data.cinemaId}&movieId=${this.data.movieId}&day=${this.data.day}`,
     })

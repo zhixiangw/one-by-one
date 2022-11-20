@@ -22,6 +22,7 @@ Page({
     price: 0,
     scaleValue: 1, // 默认缩放倍数
     orderInfo: {},
+    lockInfo: {}, // 锁定信息
     cinemaId: "",
     movieId: "",
     day: "",
@@ -37,7 +38,12 @@ Page({
     wx.showLoading({
       title: '正在加载...',
     })
-    this.setData({ showId, cinemaId, movieId, day,cinemaName }, this.init)
+
+    // 先前锁定的座位数据
+    const values = wx.getStorageSync('order_confirm') || "{}"
+    const { lockInfo = {} } = JSON.parse(values)
+
+    this.setData({ showId, cinemaId, movieId, day, cinemaName, lockInfo }, this.init)
   },
   // seqNo=1067997357&cinemaId=14101&movieId=1436719&day=2022-10-17
   // seqNo=1067997354&cinemaId=14101&movieId=1428928&day=2022-10-18
@@ -310,19 +316,26 @@ Page({
     })
   },
   submit() {
-    const { selectSeatList, showId } = this.data
+    const { selectSeatList, showId, lockInfo } = this.data
     const orderSeats = {
       count: selectSeatList.length,
       list: selectSeatList.map(v => ({ seatNo: v.cineSeatId, seatName: v.seatInfo, row: v.y, column: v.x }))
     }
+
+    wx.showLoading({
+      title: '正在锁定座位...',
+    })
+
     Api.request({
       url: '/orderConfirm',
       method: 'POST',
       data: {
         showId,
+        lockInfo,
         seats: JSON.stringify(orderSeats)
       },
       success: (res) => {
+        wx.hideLoading()
         const {
           hall,
           show_time,
@@ -338,8 +351,13 @@ Page({
           voucher_amount,
           movies_vouchers = [],
           snacks_vouchers = [],
-          vipCard = []
+          vipCard = [],
+          lockInfo = {},
         } = res.data
+
+        this.setData({
+          lockInfo
+        })
 
         const orderInfo = encodeURIComponent(JSON.stringify({
           showId,
@@ -354,9 +372,9 @@ Page({
           show_amount,
           vip_amount,
           voucher_amount,
-          seat: seats.join('')
+          seat: seats.join(' ')
         }))
-        wx.setStorageSync('order_confirm', JSON.stringify({ movies_vouchers, snacks_vouchers, vipCard }))
+        wx.setStorageSync('order_confirm', JSON.stringify({ movies_vouchers, snacks_vouchers, vipCard, lockInfo }))
         wx.navigateTo({
           url: `/pages/subPages/buy-ticket/buy-ticket?orderInfo=${orderInfo}`,
         })

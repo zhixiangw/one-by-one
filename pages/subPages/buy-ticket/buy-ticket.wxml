@@ -43,10 +43,11 @@
   <view class='section section-bottom'>
     <view class='section-title'>购票须知</view>
     <view class='section-content'>
-      <view>1、经出票的订单<text class="stress">不可改签、退款。</text></view>
-      <view>2、由商家提供订票服务，出票时间为09:00~22:00，<text class="stress">下单后大概10分钟左右完成出票。</text></view>
-      <view>3、若订票失败，将会2小时内自动退款。<text class="stress">建议使用连锁影院。</text></view>
-      <view>4、购票成功，将以小程序推送的方式提醒您出票成功，请到订单详情查看取票码，凭取票码可到影院自助取票。</view>
+      <view>1、座位已锁定，请在<text class="stress">5分钟完成付款。</text></view>
+      <view>2、经出票的订单<text class="stress">不可改签、退款。</text></view>
+      <view>3、由商家提供订票服务，出票时间为09:00~22:00，<text class="stress">下单后大概10分钟左右完成出票。</text></view>
+      <view>4、若订票失败，将会2小时内自动退款。<text class="stress">建议使用连锁影院。</text></view>
+      <view>5、购票成功，将以小程序推送的方式提醒您出票成功，请到订单详情查看取票码，凭取票码可到影院自助取票。</view>
     </view>
   </view>
   <view class='footer'>

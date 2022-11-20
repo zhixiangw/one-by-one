@@ -54,6 +54,27 @@
   margin: 10rpx 0 20rpx;
 }
 
+.tickets-tips {
+  font-size: 24rpx;
+  color: #666;
+   margin: 10rpx 25rpx 20rpx;
+}
+
+.tickets-info .qris {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+}
+.tickets-info .tickets-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45rpx;
+  color: #f03d37;
+  margin: 40rpx 30rpx;
+}
+
 .divider-box {
   position: relative;
   border-bottom: 1px dashed #e6e6e6;

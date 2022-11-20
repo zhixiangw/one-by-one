@@ -15,7 +15,6 @@ Page({
     noSchedule: false //当天是否有场次，原本时间是由后台返回的，但是缺少城市ID就没有返回，导致当天可能没有播放场次
   },
   onLoad(options) {
-    console.log(options)
     const location = app.globalData.userLocation
     if (location) {
       this.setData({

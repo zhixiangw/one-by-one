@@ -2,6 +2,7 @@ const Api = require('../../../utils/request.js')
 Page({
   data:{
     order: {},
+    lockInfo: {},
     totalMoney: '',
     showPopup: { type: '', value: false },
     selectedIndex: {
@@ -20,8 +21,9 @@ Page({
   },
   onLoad(params){
     const values = wx.getStorageSync('order_confirm') || "{}"
-    const { movies_vouchers = [], snacks_vouchers = [], vipCard = [] } = JSON.parse(values)
+    const { movies_vouchers = [], snacks_vouchers = [], vipCard = [], lockInfo = {} } = JSON.parse(values)
     const order = params.orderInfo ? JSON.parse(decodeURIComponent(params.orderInfo)) : {}
+
     const selectedIndex = {
       mpdhq: snacks_vouchers.findIndex(v => v.check),
       dydhq: movies_vouchers.findIndex(v => v.check),
@@ -39,6 +41,7 @@ Page({
       selectedIndex,
       selectedDesc,
       order,
+      lockInfo,
       totalMoney: order.voucher_amount
     })
   },
@@ -103,21 +106,29 @@ Page({
     })
   },
   payment(){
-    const { order = {}, snacks_vouchers, movies_vouchers, selectedIndex } = this.data
+    const { order = {}, snacks_vouchers, movies_vouchers, selectedIndex, 
+    lockInfo } = this.data
     const voucher = movies_vouchers[selectedIndex['dydhq']] || {}
     const snacks = snacks_vouchers[selectedIndex['mpdhq']] || {}
+
+    wx.showLoading({
+      title: '正在加载...',
+    })
+
     // 先创单
     Api.request({
       url: '/createOrder',
       method: 'POST',
       data: {
-        seqNo: order.seqNo,
+        showId: order.showId,
+        lockInfo,
         seats: JSON.stringify(order.orderSeats),
         userPhone: order.phone,
         voucherId: voucher.id ? String(voucher.id) : null,
         snacksId: snacks.id ? String(snacks.id) : null
       },
       success: (res) => {
+        wx.hideLoading()
         const { timeStamp, nonceStr, signType, paySign, order_id } = res.data
         wx.requestPayment({
           timeStamp,
@@ -140,7 +151,6 @@ Page({
                 console.log('fail',res)
               },
               complete: () => {
-                console.log("1")
                 wx.redirectTo({
                   url: `/pages/subPages/movie-order-detail/movie-order-detail?orderId=${order_id}`,
                 })

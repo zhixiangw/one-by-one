@@ -13,6 +13,7 @@ Page({
       success(res) {
         const { cinema, movie, order } = res.data
         const ticketing = order.ticketing || []
+
         _this.setData({
           order: {
             movieName: movie.name,
@@ -21,6 +22,10 @@ Page({
             cinemaName: cinema.name,
             cinemaId: cinema.cinema_id,
             hall: order.hall,
+            ticketArr: order.ticketing.map(i=>({
+              value: i,
+              text: i.replace(/(\w{4})(?=\w)/g, '$1 ')
+            })),
             seat: order.seatsText.join(','),
             status: order.status,
             ticketing: Array.isArray(ticketing) ? ticketing : JSON.parse(ticketing)

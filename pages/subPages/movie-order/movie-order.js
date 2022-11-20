@@ -21,7 +21,7 @@ Page({
               status: o.status,
               cinemaName: o.ciname.name,
               cinemaId: o.ciname.cinema_id,
-              movieImg: o.movie.img.replace('w.h', '108.150'),
+              movieImg: o.movie && o.movie.img ? o.movie.img.replace('w.h', '108.150') : '',
               movieName: o.movie.name,
               seatCount: o.seats.length,
               time: o.show_time,
@@ -38,7 +38,6 @@ Page({
   },
   //跳转到订单详情页面
   goTo(e) {
-    console.log(e)
     const orderId = e.currentTarget.dataset.orderid
     const order = this.data.orderList.find(o => o.id == orderId)
     if (order.status == 3) {
@@ -56,7 +55,6 @@ Page({
         }
       })
     } else {
-      console.log("2")
       wx.navigateTo({ url: `/pages/subPages/movie-order-detail/movie-order-detail?orderId=${orderId}` })
     }
   }
